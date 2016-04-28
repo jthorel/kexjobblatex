@@ -11,97 +11,92 @@
 \usepackage[font=small,labelfont=bf]{caption}
 
 
-\title{Lorem ipsum dolor sit amet, sed diam nonummy nibh eui
-       mod tincidunt ut laoreet dol}
-\foreigntitle{Sed diam nonummy nibh eui
-       mod tincidunt ut laoreet dol}
+\title{Navigering baserat på spatialt ljud}
+\foreigntitle{Navigation based on spatial sound}
 \subtitle{Duis autem vel eum iruire dolor in hendrerit in
           vulputate velit esse molestie consequat, vel illum
           dolore eu feugiat null}
-\author{Namn Namnet}
-\date{Oktober 2005}
-\blurb{Examenrapport vid NADA\\Handledare: Tjoho\\Examinator: Tjohej}
+\author{Max Krog \\ Johan Torell}
+\date{Maj 2016}
+\blurb{
+	Examenrapport vid NADA
+	\\Handledare: Emma Frid
+	\\Examinator: Sten Ternström}
 \trita{TRITA xxx yyyy-nn}
 \begin{document}
 \frontmatter
 \pagestyle{empty}
-\removepagenumbers
 \maketitle
 \selectlanguage{swedish}
 \begin{abstract}
-  Denna fil ger ett avhandlingsskelett.
-  Mer information om \LaTeX-mallen finns i
-  dokumentationen till paketet.
-
-Nam porttitor laoreet nulla. Phasellus massa massa, auctor
-rutrum, vehicula ut, porttitor a, massa. Pellentesque fringilla. Duis
-nibh risus, venenatis ac, tempor sed, vestibulum at, tellus. Class
-aptent taciti sociosqu ad litora torquent per conubia nostra, per
-inceptos hymenaeos.
+	Här ska en sammanfattning på svenska stå.
 \end{abstract}
 \clearpage
 \begin{foreignabstract}{english}
-  This is a skeleton for KTH theses. More documentation
-  regarding the KTH thesis class file can be found in
-  the package documentation.
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris
-purus. Fusce tempor. Nulla facilisi. Sed at turpis. Phasellus eu
-ipsum.
-
-Nam porttitor laoreet nulla. Phasellus massa massa, auctor
-rutrum, vehicula ut, porttitor a, massa. Pellentesque fringilla. Duis
-nibh risus, venenatis ac, tempor sed, vestibulum at, tellus. Class
-aptent taciti sociosqu ad litora torquent per conubia nostra, per
-inceptos hymenaeos. 
+	Abstract in english.
 \end{foreignabstract}
 \clearpage
 \tableofcontents*
 \mainmatter
-\part{Här börjar det}
 \pagestyle{newchap}
 \chapter{Inledning}
+	\textit{
+		I detta avsnitt redogörs för de observationer som lett fram till denna undersökning samt  undersökningsens syfte, frågeställning och förklaringar av specifika uttryck som används i uppsatsen.
+	} \\
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris
-purus. Fusce tempor. Nulla facilisi. Sed at turpis. Phasellus eu
-ipsum. Nam porttitor laoreet nulla. Phasellus massa massa, auctor
-rutrum, vehicula ut, porttitor a, massa. Pellentesque fringilla. Duis
-nibh risus, venenatis ac, tempor sed, vestibulum at, tellus. Class
-aptent taciti sociosqu ad litora torquent per conubia nostra, per
-inceptos hymenaeos. Aliquam ligula lectus, volutpat in, rutrum sit
-amet, ultrices at, elit. Aenean consequat facilisis sapien. Nulla
-auctor, wisi vel semper ornare, augue augue facilisis turpis, a
-laoreet quam libero quis erat. Vestibulum sagittis. Duis blandit
-laoreet tortor. Nulla mattis. Morbi eget turpis. Praesent mi. Nunc
-enim leo, blandit ut, sagittis at, pharetra sit amet, dui. Praesent
-porta tortor a ligula rutrum dapibus.
+Moderna kartapplikationer har blivit allt mer avancerade och tillgängliga, något som lett till att personer med tillgång till en internetuppkopplad smartphone med GPS har bra möjligheter till att navigera till valfri plats i världen. Det enda kravet är att personen i fråga har välfungerande syn samt viss teknikvana.
 
-Integer pellentesque, orci consequat suscipit pharetra, sem eros
-tempor orci, non ultricies massa justo vitae nunc. Nunc sagittis.
-Vestibulum egestas quam at eros. Curabitur consectetuer, magna vel
-gravida varius, tortor augue congue tellus, quis gravida nulla risus
-nec diam. Aliquam commodo dapibus risus. Vestibulum lacinia lectus sed
-nisl. Sed libero purus, tincidunt non, sagittis nec, sodales quis,
-nulla. Sed tortor tortor, viverra et, hendrerit eu, accumsan
-sollicitudin, mi. Suspendisse potenti. Maecenas non wisi sed urna
-mollis dignissim. Aenean at ligula. Vestibulum porta. Donec mauris.
-Donec scelerisque rutrum elit. Aenean ultrices, eros vel sollicitudin
-semper, dui lacus hendrerit metus, id ultricies arcu arcu id mi. In
-eget sapien sed lorem cursus eleifend.
+Informationen kommuniceras idag främst via visuella medel, såsom en karta där användarens position samt förslagna navigering visas med ett grafiskt interface. Användaren behöver inte själv veta vart den befinner sig då moderna smartphones med hjälp av GPS kan ta reda på detta med en precision av några få meter. 
 
-\section{Begreppsdefinitioner}
-Här definieras de centrala begreppen för denna uppsatsen
+Samtidigt som företag som Google och Apple jobbar för att kartlägga världen och tillhandahålla navigeringstjänster gratis till sina användare, så har det inom den akademiska världen gjorts flera studier på hur navigeringsdatan kan förmedlas till användaren på ett annat sätt än via ett grafiskt interface. Huvudområdena är framförallt via vibrotaktil samt audiell feedback. Denna studie är inriktad på det senare området och målet är att undersöka hur väl den senaste forskningen kan omsättas i en modern smartphone utan tillgång till någon extern hårdvara.
 
-\subsection{Sonifiering}
+Avsikten är att helt eliminiera den visuella feedbacken och med hjälp av spatialiserat ljud guida användaren via så kallade ruttpunkter samt att göra detta tillgängligt för alla med en smartphone.
+
+
+	\section{Begreppsdefinitioner}
+	\textit{
+Här definieras de centrala begreppen för denna uppsats
+	}
+
+		\subsection{Sonifiering}
 Sonifiering är att använda sig av ickeverbalt ljud för att förmedla information. \citep{Kramer2010}
 
-\subsection{Spatialt ljud}
+		\subsection{Spatialt ljud}
 Ljud i 3D-rummet.
 
-\subsection{Binauralt ljud}
+		\subsection{Binauralt ljud}
 Ljud från två källor som simulerar ljud i 3D-rummet (spatialt ljud).
 
+		\subsection{Uppfångsradie}
+Uppfångsradien är radien på den cirkel kring en ruttpunkt vid vilken användaren anses vara framme vid ruttpunkten. Denna parameter behöver vara väl avvägd för att förhindra att användaren går förbi ruttpunkten och på så sätt behöver vända om för att registrera att den nått sitt mål. Om uppfångsradien är för stor blir problemet istället att navigeringen tappar precision.(Walker et al, 2004)
+	\section{Bakgrund}
+	
+	\section{Syfte}
+Syftet med denna undersökning är att undersöka hur väl lämpat ett system för att kommunicera navigationsdata via sonifierat ljud är för användning i verkligheten. Tidigare studier visar att fotgängare som tittar ner i sin smartphone beter sig mer riskfullt och är mindre uppmärksamma på sin omgivning \citep{Nasar2008}. Att kommunicera navigationsdatan via ljud skulle alltså leda till säkrare omständigheter för människor som navigerar.
+	\section{Problemformulering}
+Vi vill i undersöka om det med hjälp av dagens smartphones går att implementera ett användbart system för navigation där all information när användaren i form av spatialt ljud. Problemformuleringen denna rapport utgår från är:
+\\
+\\
+		\textbf{
+Vilka möjligheter och begränsningar kan finnas med en navigationstjänst baserad på spatial sonifiering av navigationsdatan för en modern smartphone.
+		}
+\\ 
+\\
+Under arbetet kommer vi även utgå från följande frågeställningar:
+		
+		\begin{itemize}
+			\item Vilka rekommendationer för uppfångsradie av ruttpunkter kan vi ge i detta sammanhang?
+			\item Hur påverkas ruttpunkternas placering möjligheten till effektiv navigering?
+			\item Är användarna efter test av tekniken villiga att fortsätta använda den?
+		\end{itemize}
 
+		\subsection{Avgränsningar}
+			\begin{itemize}
+				\item Smartphonen är i denna studie en iPhone 6 med iOS 9.0. 
+				\item Deltagarna i studien är alla medieteknikstudenter vid Kungliga Tekniska Högskolan. 
+				\item Navigeringen i undersökningen kommer enbart att utföras till fots.
+			\end{itemize}
+		
 
 \chapter{Teori/Litteratur}
 
@@ -118,7 +113,7 @@ velit vitae velit. Suspendisse potenti. Maecenas eget ante. Maecenas
 blandit, urna at varius lacinia, lorem purus ullamcorper risus, non
 pretium arcu libero at odio.
 
-\section{Binauralt ljud och HRTF}
+	\section{Binauralt ljud och HRTF}
 
 Vestibulum dolor dolor, interdum eu, iaculis scelerisque, auctor at,
 mi. Nullam ut erat quis sem bibendum dignissim. Vestibulum volutpat
@@ -128,7 +123,7 @@ rutrum dui vel orci. Aliquam lacus lacus, varius a, sodales vitae,
 egestas a, purus. Integer varius venenatis odio. Pellentesque dui
 mauris, lacinia in, placerat lobortis, tempor ac, lectus.
 
-\section{Navigering med ruttpunkter}
+	\section{Navigering med ruttpunkter}
 
 Sed lobortis neque non mauris. Maecenas rhoncus tempor justo. Nunc vel
 diam at dolor luctus tincidunt. Ut egestas. Aliquam eu turpis eu nisl
@@ -138,7 +133,7 @@ sed neque dictum consectetuer. Etiam bibendum odio quis est. Quisque
 mollis magna et odio. Nunc nulla. Suspendisse magna felis, tincidunt
 in, blandit non, tempus vel, orci.
 
-\section{GPS}
+	\section{GPS}
 
 Sed laoreet tellus in massa. Fusce egestas dapibus wisi. Pellentesque
 sit amet nulla. Donec dignissim rutrum urna. Integer et mi at urna
@@ -174,7 +169,7 @@ odio suscipit ornare. Phasellus pede arcu, elementum sed, elementum
 eu, viverra et, ligula. Aliquam metus nisl, convallis et, ultrices
 vel, consequat quis, felis. Aenean gravida euismod urna.
 
-\section{Absolut och relativ bäring}
+	\section{Absolut och relativ bäring}
 
 Aliquam quis nibh quis justo elementum viverra. Vestibulum ipsum.
 Integer sit amet urna id lorem condimentum pretium. Nam adipiscing
@@ -267,8 +262,6 @@ nunc nec ipsum vehicula bibendum. Maecenas eu lacus. Nulla interdum,
 neque sit amet pharetra interdum, erat pede eleifend lectus, ac
 consectetuer purus urna quis wisi. Integer pretium nunc ut dui.
 
-
-\part{Utförande}
 
 \chapter{Metod}
 
