@@ -22,7 +22,7 @@
     Examenrapport vid NADA
     \\Handledare: Emma Frid
     \\Examinator: Sten Ternström}
-\trita{TRITA xxx yyyy-nn}
+\trita{DATUM?}
 \begin{document}
 \frontmatter
 \pagestyle{empty}
@@ -147,6 +147,10 @@ När ljudet är rakt motsatt framför och bakom eller rakt motsatt över och under ä
 
 Head Related Transfer Function (HRTF) är en överföringsfunktion som går att applicera på ljud för att efterlikna den spektrala filtrering, tids- och fasskillnader av en ljudkälla som ytterörat och de andra delarna av kroppen åsamkar.
 
+
+    \section{GPS}
+GPS är ett system for satellitnavigering där användare med en GPS-mottagare kan bestämma sin position. Positionen bestäms med hjälp av triangulering från 3 satelliter där varje satellit räknar ut avståndet mellan satellit och användare. Med tre olika avstånd kan position bestämmas och nämns i longitud (breddgrader) och latitud (längdgrad) \citep{Kaplan2005}. Altitud kan också bestämmas med en fjärde satellit men används inte i denna studie. 
+
     \section{Absolut och relativ bäring}
 		\begin{figure}[h]
 			\centering
@@ -157,15 +161,12 @@ Bäring är ett vinkelmått och har i denna uppsats två innebörder. Den absoluta bä
 
 Den relativa bäringen tar hänsyn till användarens kurs relativt norr och anger den vinkel som användaren måste rotera för att ha en kurs rakt mot målet.
 
-HÄR HAR VI FORMLER VI KAN STOPPA IN. FRÅN SPATIAL SOUND FOR NAVIGAT.. SIDA 3.
+Med hjälp av två positioner med varsin lat- och longitud kan absolut bäring från en position till den andra räknas ut. Den kortaste distansen mellan två koordinater blir här inte en rak linje utan en båge eftersom jorden är en sfär. Därför måste följande funktion användas:
+\begin{figure}[h]
+$\theta = atan2(\sin (\triangle lon) \cdot \cos (lat_2), \cos (lat_1)\cdot \sin (lat_2) - \sin (lat_1)\cdot \cos (lat_2) \cdot \cos (\triangle lon))$
+\caption{Beräkna bäring från punkt 1 till punkt 2}
+\end{figure}
 
-    \section{GPS}
-
-GPS är ett system for satellitnavigering där användare med en GPS-mottagare kan bestämma sin position. Positionen bestäms med hjälp av triangulering från 3 satelliter där varje satellit räknar ut avståndet mellan satellit och användare. Med tre olika avstånd kan position bestämmas och nämns i longitud (breddgrader) och latitud (längdgrad) \citep{Kaplan2005}. Altitud kan också bestämmas med en fjärde satellit men används inte i denna studie. Med hjälp av två positioner med varsin lat- och longitud kan absolut bäring från en position till den andra räknas ut. Den kortaste distansen mellan två koordinater blir här inte en rak linje utan en båge eftersom jorden är en sfär. Därför måste följande funktion användas:
-
-\begin{quote}
- FORMLER HÄR
-\end{quote}
 \chapter{Prototypen}
 
 Baserat på teorin utvecklades en prototyp för att användas under undersökningen. Prototypen skapades i utvecklingsmiljön Xcode med programmeringsspråket Swift 2, för att användas på en iPhone/iOS. För att det spatialiserade ljudet ska fungera krävs att användaren använder hörlurar.
@@ -264,6 +265,15 @@ Av de tolv testdeltagarna var det sju som framgångsrikt navigerade hela rutten. 
 Av de fem testdeltagarna som inte navigerade hela rutten fick en avbryta innan ruttpunkt M på grund av problem med GPS. Samtliga andra av det avbrutna fick avbryta testet innan ruttpunkt Q eftersom de fastnat på fel sida av ett staket.
 
 \section{Resultat av navigering}
+
+\begin{table}
+    \begin{tabular}{ll|llllllllllllllllll}
+    ~ Ruttpunkt ~ B ~ C ~ D ~ E ~ F ~ G ~ H ~ I ~ J ~ K ~ L ~ M ~ N ~ O ~ P ~ Q ~ R ~ S ~ T\\ \hline
+    ~ Nådde via avsedd väg ~ 11 ~ 11 ~ 11 ~ 12 ~ 8 ~ 12 ~ 12 ~ 12 ~ 12 ~ 12 ~ 12 ~ 10 ~ 11 ~ 11 ~ 10 ~ 4 ~ 6 ~ 7 ~ 7 ~ \\
+    ~ Nådde via ej avsedd väg ~ 1 ~ 1 ~ 1 ~ 0 ~ 4 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 1 ~ 0 ~ 0 ~ 1 ~ 3 ~ 1 ~ 0 ~ 0 ~\\
+    ~ Testet avbröts ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 1 ~ 0 ~ 0 ~ 0 ~ 4 ~ 0 ~ 0 ~ 0 ~ \\
+    \end{tabular}
+\end{table}
 Tabell 1 visar för varje ruttpunkt vilken mängd testdeltagare som nådde den och på vilket sätt. Rutten är uppdelad i en delrutt för varje ny ruttpunkt. ``Nådde via avsedd väg'' betyder att testdeltagaren tog den kortast möjliga vägen till nästa ruttpunkt. ``Nådde via ej avsedd väg'' innebär att deltagaren antingen gjorde ett fel i navigeringen så att den var tvungen att gå tillbaka, eller att den fastnat bakom t.ex. ett staket. ``Testet avrbröts'' betyder att testledaren i enlighet med metoden beslutade att avbryta testet eftersom användaren kommit allt för långt bort från den avsedda rutten.
 
 Figur Xs högra bild är ett exempel på navigering som klassificeras som ej avsedd. Testdeltagaren har missat att göra en skarp sväng vänster när den nått ruttpunkt E och sedan tagit en omväg på grund av att den hamnat på fel sida att ett staket. Samtliga fyra testdeltagare som nått ruttpunkt F via en ej avsedd väg har navigerat på ett liknande sätt.
@@ -274,7 +284,12 @@ Navigationen från ruttpunkt P till ruttpunkt Q var den delrutt där flest använda
 \section{Allmän användarupplevelse}
 På enkätfrågan ``Hur var den generella upplevelsen?'' som besvarades på en tiogradig skala där 1 motsvarade ``mycket dålig'' och 10 motsvarade ``mycket god'' svarade alla deltagare inom betyget 8-10 där medelbetyget var 8,42 (standardavvikelse 0,67), medianen 8 och typvärdet 8.
 
-Enkätfrågan ``Vad tyckte du om detta sätt att navigera på?'', graderad från 1 ``Mycket dålig'' till 10 ``Mycket bra'' besvarades med medelbetyg 7,75 (standardavvikelse 1,66), medianen 8 och typvärdet 9.
+Enkätfrågan ``Vad tyckte du om detta sätt att navigera på?'', besvarades enligt figur x där medelbetyg var 7,75 (standardavvikelse 1,66), medianen 8 och typvärdet 9.
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=\textwidth]{figur/tyckte.png}
+  \caption{Vad tyckte du om detta sätt att navigera på?}
+\end{figure}
 
 Kommentarerna från deltagarna visade att de flesta var positiva till denna metoden. Många var positivt överraskade över att det funkade bra samt tyckte det var roligt och spännande att testa ny teknik. Två nämner att det var praktiskt om man ändå lyssnar på musik samtidigt. Tre stycken nämner explicit det positiva med att man inte behöver titta på en skärm, medan en deltagare skriver att han var för koncentrerad på hörseln för att vara uppmärksammad på omgivningen. Deltagare 9 tyckte att det fungerade men att det inte var ``super praktiskt'' [sic]. Svar inkluderar också att det var ovant men att man lärde sig som Deltagare 12 skriver:
 
@@ -314,14 +329,32 @@ De flesta som svarade ``Övrigt'' var positivt inställda men några få var mer spl
 \begin{quote}``Med karta kan det vara svårt att veta vilket håll man går på en väg, dock kan karta ge en överblick av hela vägen vilket detta inte kan.'' -Deltagare 4
 \end{quote}
 
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=\textwidth]{figur/foerstaa.png}
+  \caption{Hur lätt/svårt var det att förstå hur det fungerade?}
+\end{figure}
+
 På frågan ``Hur lätt/svårt var det att förstå hur det fungerade? (Varför?)'' svarade de allra flesta att det var lätt att lära sig och förstå hur det fungerade. Tre stycken svarar att de hade lite svårt att förstå i början men att de sedan lärde sig. En deltagare nämner att det var lätt att höra vart man skulle gå men att det var svårt att höra om man gick åt rätt håll. Testledarnas observationer överensstämmer med denna data.
 
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=\textwidth]{figur/lokalisera.png}
+  \caption{Hur lätt/svårt var det att lokalisera ljudet?}
+\end{figure}
 Enligt svaren från frågan ``Hur lätt/svårt var det att lokalisera ljudet? (Förklara varför?)'' hade de flesta deltagarna inga större problem med att lokalisera ljudet. De flesta använder ordet ``lätt'' i kommentarer även om några hade lite svårare i början så lärde de sig efter ett tag. Några kommentarer nämner de olika ljudnivåerna på musiken i prototypen som ett litet problem för att de inte hörde då ljudet var lågt. En deltagare kommenterade också om att övriga ljud gjorde det svårt ibland. Att rotera mobilen för att snabbare lokalisera nämndes av två deltagare som en lätt metod för att lokalisera sig på och en utav de två kommenterade även hur viktigt det är att det inte har en fördröjning när man snurrar. Bara en deltagare hade problem med att höra avstånd och bara en deltagare nämnde att det var svårt att höra skillnad på rakt fram och rakt bakåt såsom det är lätt att skilja höger och vänster.
 
 \begin{quote}``Övriga ljud gjorde det lite svårt ibland, samt när låten tog slut innan den började om var det lite svårt att höra.'' - Deltagare 4
 \end{quote}
 
 \section{Ruttpunktsbyten}
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=\textwidth]{figur/byten.png}
+  \caption{Hur tydligt var det med ruttpunktsbyten?}
+\end{figure}
 På frågan ``Hur tydligt var det med ruttpunktsbyten?'' var det överväldigande viktat mot att det var tydligt och lätt. Majoriteten svarade med en 10 eller 9 på en skala på hur tydligt det var från ``Inte alls tydligt'' till ``Mycket tydligt''. I de följande kommenteraren nämner flera att det var en tydlig signal och att man tydligt hörde att ljudet kom från en ny plats. Två deltagare hade lite svårare i början, men en vande sig efter ett tag och den andra som hade svårt menade att det berodde på att musiken sänktes och det hjälpte att roterara på telefonen
 
 Observationer under testerna visade också en viss osäkerhet, speciellt vid vissa ruttpunkter. Bytet mellan ruttpunkt G och H tog de flesta utan att stanna upp medans ruttpunkt P (grinden) gav de flesta huvudbry. Förutom dessa två byten var det varierande under ruttpunktsbytena då de flesta stannade upp när det var ruttpunktsbyte för att omorienteria sig. Några få fortsatte utan att stanna upp.
@@ -329,30 +362,25 @@ Observationer under testerna visade också en viss osäkerhet, speciellt vid vissa
 \section{GPS-fel}
 Deltagare 10:s undersökning avbröts på grund av att GPS. Testledaren observerade att deltagaren trots att den missat en ruttpunkt fortsatte att gå mycket bestämt åt fel håll. Efter ett tiotal meter stannade deltagaren till och bytte riktning helt, efter vilket deltagaren verbalt uttryckte sina problem med att tyda instruktionerna till testledaren. Testledaren bestämde att avbryta testet.
 
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=0.5\textwidth]{smm11.jpg}
-  \caption{Steve McQueen}
-\end{figure}
 
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{smm11}
+        \includegraphics[width=\textwidth]{figur/smm11.jpg}
         \caption{A gull}
         \label{fig:gull}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{smm11}
+        \includegraphics[width=\textwidth]{figur/smm11.jpg}
         \caption{A tiger}
         \label{fig:tiger}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{smm11}
+        \includegraphics[width=\textwidth]{figur/smm11.jpg}
         \caption{A mouse}
         \label{fig:mouse}
     \end{subfigure}
