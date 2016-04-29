@@ -19,9 +19,9 @@
 \author{Max Krog \\ Johan Torell}
 \date{Maj 2016}
 \blurb{
-	Examenrapport vid NADA
-	\\Handledare: Emma Frid
-	\\Examinator: Sten Ternström}
+    Examenrapport vid NADA
+    \\Handledare: Emma Frid
+    \\Examinator: Sten Ternström}
 \trita{TRITA xxx yyyy-nn}
 \begin{document}
 \frontmatter
@@ -29,20 +29,20 @@
 \maketitle
 \selectlanguage{swedish}
 \begin{abstract}
-	Här ska en sammanfattning på svenska stå.
+    Här ska en sammanfattning på svenska stå.
 \end{abstract}
 \clearpage
 \begin{foreignabstract}{english}
-	Abstract in english.
+    Abstract in english.
 \end{foreignabstract}
 \clearpage
 \tableofcontents*
 \mainmatter
 \pagestyle{newchap}
 \chapter{Inledning}
-	\textit{
-		I detta avsnitt redogörs för de observationer som lett fram till denna undersökning samt  undersökningsens syfte, frågeställning och förklaringar av specifika uttryck som används i uppsatsen.
-	} \\
+  \textit{
+    I detta avsnitt ????redogörs för de observationer som lett fram till denna undersökning samt  undersökningsens syfte, frågeställning och förklaringar av specifika uttryck som används i uppsatsen.
+  } \\
 
 Moderna kartapplikationer har blivit allt mer avancerade och tillgängliga, något som lett till att personer med tillgång till en internetuppkopplad smartphone med GPS har bra möjligheter till att navigera till valfri plats i världen. Det enda kravet är att personen i fråga har välfungerande syn samt viss teknikvana.
 
@@ -53,307 +53,244 @@ Samtidigt som företag som Google och Apple jobbar för att kartlägga världen och 
 Avsikten är att helt eliminiera den visuella feedbacken och med hjälp av spatialiserat ljud guida användaren via så kallade ruttpunkter samt att göra detta tillgängligt för alla med en smartphone.
 
 
-	\section{Begreppsdefinitioner}
-	\textit{
+  \section{Begreppsdefinitioner}
+  \textit{
 Här definieras de centrala begreppen för denna uppsats
-	}
+  }
 
-		\subsection{Sonifiering}
+    \subsection{Sonifiering}
 Sonifiering är att använda sig av ickeverbalt ljud för att förmedla information. \citep{Kramer2010}
 
-		\subsection{Spatialt ljud}
-Ljud i 3D-rummet.
+    \subsection{Spatialt ljud}
+Spatiala ljud är ljud som upplevs härstamma från en plats i det tredimensionella rummet. Spatialt ljud ställer alltid krav på hur de spelas upp och även om lösningar för hifi-anläggningar finns så kommer denna undersökning att fokusera på stereo-ljud som spelas upp i hörlurar.
 
-		\subsection{Binauralt ljud}
-Ljud från två källor som simulerar ljud i 3D-rummet (spatialt ljud).
+    \subsection{Modern smarttelefon}
+Modern smarttelefon innebär i denna studie att telefonen utöver funktionerna för en vanlig smarttelefon (tangentbord, operativsystem, installera programvara och så vidare) även har hårdvara för rörelsesensor, kompass och GPS. 
 
-		\subsection{Uppfångsradie}
-Uppfångsradien är radien på den cirkel kring en ruttpunkt vid vilken användaren anses vara framme vid ruttpunkten. Denna parameter behöver vara väl avvägd för att förhindra att användaren går förbi ruttpunkten och på så sätt behöver vända om för att registrera att den nått sitt mål. Om uppfångsradien är för stor blir problemet istället att navigeringen tappar precision.(Walker et al, 2004)
-	\section{Bakgrund}
-	
-	\section{Syfte}
-Syftet med denna undersökning är att undersöka hur väl lämpat ett system för att kommunicera navigationsdata via sonifierat ljud är för användning i verkligheten. Tidigare studier visar att fotgängare som tittar ner i sin smartphone beter sig mer riskfullt och är mindre uppmärksamma på sin omgivning \citep{Nasar2008}. Att kommunicera navigationsdatan via ljud skulle alltså leda till säkrare omständigheter för människor som navigerar.
-	\section{Problemformulering}
+    \subsection{Ruttpunkt}
+Genom att dela upp en navigering i flera ruttpunkter går det att dirigera användaren från punkt till punkt. En ruttpunkt kan innehålla flera sorters data, men behöver innehålla en GPS-koordinat som motsvarar dess position i latitud och longitud.
+
+    \subsection{Uppfångsradie}
+Uppfångsradien är radien på den cirkel kring en ruttpunkt vid vilken användaren anses vara framme vid ruttpunkten. Denna parameter behöver vara väl avvägd för att förhindra att användaren går förbi ruttpunkten och på så sätt behöver vända om för att registrera att den nått sitt mål. Om uppfångsradien är för stor blir problemet istället att navigeringen tappar precision \citep{Walker2004}.
+
+    \subsection{Användbarhet}
+Användbarhet definieras enligt ISO-normen 9241-11 som följande:
+\begin{quote}Den grad i vilken användare i ett givet sammanhang kan bruka en produkt för att uppnå specifika mål på ett ändamålsenligt, effektivt och för användaren tillfredsställande sätt.
+\end{quote}
+
+För att testa användbarhet kan det göras användartester och studera användarens reaktioner, tid för att klara uppgift, antal ``fel'' gjorda \citep{Dumas1999}. Detta innebär också test av en uppfattad användarupplevelse.
+
+    \section{Bakgrund}
+
+Här redogör vi för tidigare studier inom området. 
+
+Att enbart med hjälp av ljud kommunicera vägbeskrivningar är något som forskats på sedan långt innan smarttelefonen blev en del av varje persons vardag. I början bedrevs forskningen främst med syftet att skapa ett assistansmedel för människor med synnedsättning, vilket ställde höga krav på applikationen då den var tvungen att kommunicera även sådant som människor med fungerande syn kunde upptäcka själva. Att kommunicera de mest vitala delarna för navigering - riktning och avstånd - har det bedrivits mycket forskning på och det finns inom branschen en konsensus kring mer och mindre viktiga parametrarna.
+
+I studien Navigation system for the blind \citep{Loomis1998} jämfördes olika sätt att förmedla information om den relativa bäringen via ljud. Fyra olika implementationer jämfördes där den tekniken som var mest uppskattad och resulterade i snabbast navigation bestod av enbart spatialiserat ljud. Ljudets riktning och distans användes för att att skapa en binaural signal som användaren var tvungen att använda hörlurar för att uppfatta korrekt.
+
+ONTRACK är en prototyp utvecklad av XXX och är en tidig studie att använda sig av förändring av musikstycken för att förmedla information om riktning och avstånd. Resultaten visade på att denna spatialisering av ljudet fungerade bra. I stil med andra användes HRTF. \citep{Jones2008}
+
+Guided by music undersökte hurvida det genom att förändra uppspelningen av musik är möjligt att guida användare. De implementerade ett system med HRTF. Fungerade bra.
+
+AudioGPS är en tidig prototyp inom området. Prototypen skiljer sig från övriga i att den inte hade någon fast kompass, användarens riktning beräknades alltid av de senaste två rapporterade GPS-punkterna. Prototypen använde sig av en geiger-räknare liknande stil för att förmedla avstånd, och ljudet panorerades i stereo för att kommunicera riktning. Studien utfördes redan 2002 och avsaknaden av smartphones ledde till att användarna var tvungna att bära runt på en ryggsäck av utrustning.
+\citep{Holland2002}
+
+Utöver ruttnavigering med ruttpunkter har det gjorts tester med ``route-navigering'' där ljudet istället alltid ligger lite framför för användare att följa. En studie visade att båda teknikerna fungerade relativt lika bra. Route-navigering verkade dock fungera bättre under icke-familjära förhållanden och när det var svårare navigering \citep{Albrecht2016}. Även denna studie använde endast musikstycke som ljudkälla.
+
+gpsTunes, PocketPC med en GPS-addon på PocketPCn. Navigerade med musik där volym och riktning justerades efter vart användaren skulle röra sig.
+
+I undersökningar av där man jämfört verbal förmedling av navigationsdata med sonifiering av densamma är en märkbar effekt att den kognitiva belastningen på användaren blir betydligt lägre vid sonifiering. Detta är som mest märkbart när användaren samtidigt ska utföra en annan uppgift, där användarens kognitiva förmåga
+\citep{Klatzky2006}
+
+    \section{Syfte}
+Syftet med denna undersökning är att undersöka hur väl lämpat ett system för att kommunicera navigationsdata via sonifiering är för användning i verkligheten. Tidigare studier visar att fotgängare som tittar ner i sin smartphone beter sig mer riskfullt och är mindre uppmärksamma på sin omgivning \citep{Nasar2008}. Att kommunicera navigationsdatan via ljud skulle alltså leda till säkrare omständigheter för människor som navigerar.
+
+
+    \section{Problemformulering}
 Vi vill i undersöka om det med hjälp av dagens smartphones går att implementera ett användbart system för navigation där all information när användaren i form av spatialt ljud. Problemformuleringen denna rapport utgår från är:
 \\
 \\
-		\textbf{
+        \textbf{
 Vilka möjligheter och begränsningar kan finnas med en navigationstjänst baserad på spatial sonifiering av navigationsdatan för en modern smartphone.
-		}
+        }
 \\ 
 \\
 Under arbetet kommer vi även utgå från följande frågeställningar:
-		
-		\begin{itemize}
-			\item Vilka rekommendationer för uppfångsradie av ruttpunkter kan vi ge i detta sammanhang?
-			\item Hur påverkas ruttpunkternas placering möjligheten till effektiv navigering?
-			\item Är användarna efter test av tekniken villiga att fortsätta använda den?
-		\end{itemize}
+        
+        \begin{itemize}
+            \item Vilka rekommendationer för uppfångsradie av ruttpunkter kan vi ge i detta sammanhang?
+            \item Hur påverkas ruttpunkternas placering möjligheten till effektiv navigering?
+            \item Är användarna efter test av tekniken villiga att fortsätta använda den?
+        \end{itemize}
 
-		\subsection{Avgränsningar}
-			\begin{itemize}
-				\item Smartphonen är i denna studie en iPhone 6 med iOS 9.0. 
-				\item Deltagarna i studien är alla medieteknikstudenter vid Kungliga Tekniska Högskolan. 
-				\item Navigeringen i undersökningen kommer enbart att utföras till fots.
-			\end{itemize}
-		
+        \subsection{Avgränsningar}
+            \begin{itemize}
+                \item Smartphonen är i denna studie en iPhone 6 med iOS 9.0. 
+                \item Deltagarna i studien är alla medieteknikstudenter vid Kungliga Tekniska Högskolan. 
+                \item Navigeringen i undersökningen kommer enbart att utföras till fots.
+            \end{itemize}
 
 \chapter{Teori/Litteratur}
+\textit{Det här kapitlet redogör för den teoretiska grund som prototypen kommer att byggas kring. Möjligheten att med hjälp av HRTF simulera tredimensionellt ljud samt att navigera med hjälp av ruttpunkter redogörs för.}
 
-Aliquam et ante. Vivamus ultricies, neque eget iaculis interdum, lacus
-quam hendrerit sapien, vel posuere justo nulla vitae arcu. Morbi
-magna. Aliquam erat volutpat. Aenean mattis consequat nibh. Donec
-lobortis sapien a enim. Cras mattis ultricies mi. Quisque venenatis.
-Phasellus risus justo, vulputate non, tristique in, tristique vel,
-neque. Phasellus pretium, dui nec dapibus laoreet, ligula enim laoreet
-eros, tempus interdum massa turpis quis dolor. Etiam ultricies
-condimentum neque. Maecenas pellentesque. Duis tortor. Aliquam ac
-dolor. Vestibulum nisl. Nunc facilisis tincidunt mi. Morbi feugiat
-velit vitae velit. Suspendisse potenti. Maecenas eget ante. Maecenas
-blandit, urna at varius lacinia, lorem purus ullamcorper risus, non
-pretium arcu libero at odio.
+    \section{Binauralt ljud och HRTF}
 
-	\section{Binauralt ljud och HRTF}
+Människan kan med hjälp av sina två öron bedöma ett ljuds riktning med en noggranhet av ungefär 2 grader \citep{genuit1990development}. Analysering av skillnaderna mellan ljudsignalerna som når de två öronen är vad som ger upphov till detta. Nedan följer en genomgång av de viktigaste parametrarna.
 
-Vestibulum dolor dolor, interdum eu, iaculis scelerisque, auctor at,
-mi. Nullam ut erat quis sem bibendum dignissim. Vestibulum volutpat
-nisl in tortor. Etiam pretium nulla et elit. Integer tortor. Ut metus
-ligula, egestas non, ornare vel, bibendum eu, urna. Pellentesque
-rutrum dui vel orci. Aliquam lacus lacus, varius a, sodales vitae,
-egestas a, purus. Integer varius venenatis odio. Pellentesque dui
-mauris, lacinia in, placerat lobortis, tempor ac, lectus.
+Ljudets frekvens påverkas både av omgivningen men framförallt av lyssnarens kropp. Överkroppen, huvudet och öronen skapar resonans och bryter ljudet på olika sätt beroende på vilken infallsvinkel det har, något som skapar unika egenskaper på ljudet innan det når våra öron. Till exempel så lågpassfiltreras frekvenser under 1 kHz av ytterörat. På samma sätt så förstärker ytterörat frekvenser över 1 kHzs styrka, beroende på ljudets infallsvinkel varierar denna förstärkning mellan
 
-	\section{Navigering med ruttpunkter}
+För att avgöra en ljudkällas position i det horisontella planet är det framförallt fasskillnaden mellan öronen som spelar roll. Med detta menas att ett ljud som kommer direkt från höger kommer att träffa personens högeröra tidigare än det når vänsterörat.  Det vertikala planet ger ingen fasskillnad och där är det istället ytterörats filtrering av ljudet som är viktig. Framförallt huvudet, axlarna och bröstet är det som påverkar ljudet \citep{genuit1990development}.
 
-Sed lobortis neque non mauris. Maecenas rhoncus tempor justo. Nunc vel
-diam at dolor luctus tincidunt. Ut egestas. Aliquam eu turpis eu nisl
-ultricies sollicitudin. Donec erat odio, fermentum id, malesuada id,
-viverra vitae, lorem. Morbi scelerisque sagittis enim. Donec non ante
-sed neque dictum consectetuer. Etiam bibendum odio quis est. Quisque
-mollis magna et odio. Nunc nulla. Suspendisse magna felis, tincidunt
-in, blandit non, tempus vel, orci.
+En viktig aspekt av binauralt hörande är att det är olika från person till person, alla kroppar och öron är olika formade varje persons hörande är anpassat efter den egna kroppen.
 
-	\section{GPS}
+När ljudet är rakt motsatt framför och bakom eller rakt motsatt över och under är det lite svårare att urskilja då både volym och faser är likadana. Detta kom att kallas ``the cone of confusion'' av vissa \citep{Begault2000}. Då får hjärnan endast förlita sig på de andra filtreringsfunktionerna. Eftersom alla människor är olika har hjärnan tränats att känna igen sina egna individuella filtreringar vilket också gör det svårt för att simulera detta. Det är dock större skillnad på de högre frekvenserna fram och bak då ljudet behöver studsa mer för att nå örat bakifrån, vilket gör att de högre frekvenserna filtreras.
 
-Sed laoreet tellus in massa. Fusce egestas dapibus wisi. Pellentesque
-sit amet nulla. Donec dignissim rutrum urna. Integer et mi at urna
-viverra vestibulum. Nullam justo tortor, vulputate nec, porta non,
-consequat ac, lectus. Sed ligula. Nullam tristique. Nullam pulvinar.
-Morbi at elit et lacus tristique nonummy. Vivamus nunc ante, imperdiet
-at, luctus non, aliquam a, neque. In interdum sapien et wisi.
-Curabitur ipsum justo, consequat eget, viverra eu, porta vel, lacus.
-Suspendisse potenti. Proin wisi. In tristique neque at ipsum.
-Phasellus ac justo eu nibh faucibus lobortis. Vestibulum lorem.
+Head Related Transfer Function (HRTF) är en överföringsfunktion som går att applicera på ljud för att efterlikna den spektrala filtrering, tids- och fasskillnader av en ljudkälla som ytterörat och de andra delarna av kroppen åsamkar.
 
-Duis blandit est id diam. Sed aliquet semper arcu. Curabitur sed eros
-ut neque eleifend sagittis. Cras lacinia, nisl a sagittis scelerisque,
-nibh risus varius pede, ac interdum lacus lorem quis quam. Mauris sit
-amet orci a ligula porttitor nonummy. Aliquam malesuada turpis at diam
-semper vestibulum. Phasellus ullamcorper. Aenean ultrices lacus a diam
-lobortis posuere. Duis porttitor euismod turpis. Ut sem nulla, porta
-vel, lacinia eget, rutrum non, justo. Phasellus risus sem, placerat
-at, sodales ac, viverra vitae, magna. Fusce non magna. Mauris varius
-vestibulum eros. Nullam nec quam in tortor ultrices varius. Nulla
-tempus lectus ut tortor.
+    \section{Absolut och relativ bäring}
 
-Ut vestibulum diam in lacus. Aenean vestibulum bibendum dolor.
-Praesent in wisi. Aenean ornare faucibus orci. Donec mattis magna et
-dui. Nullam vestibulum lobortis nibh. Etiam ultrices lorem nec est.
-Duis ut nisl. Vivamus risus. Pellentesque habitant morbi tristique
-senectus et netus et malesuada fames ac turpis egestas. Suspendisse
-sagittis, dolor eget ullamcorper elementum, sem erat sagittis dolor,
-sit amet tincidunt quam neque consectetuer quam. Maecenas at quam.
-Etiam gravida. Sed nec enim. Fusce pulvinar. In pede metus, lobortis
-a, ullamcorper quis, commodo vitae, turpis. Maecenas sed mi sit amet
-odio suscipit ornare. Phasellus pede arcu, elementum sed, elementum
-eu, viverra et, ligula. Aliquam metus nisl, convallis et, ultrices
-vel, consequat quis, felis. Aenean gravida euismod urna.
+Bäring är ett vinkelmått och har i denna uppsats två innebörder. Den absoluta bäringen är vinkeln från användaren, relativt norr, till en målpunkt. Den absoluta bäringen påverkas inte av användarens kurs eller riktning och antar ett värde mellan 0 och 360 grader.
 
-	\section{Absolut och relativ bäring}
+Den relativa bäringen tar hänsyn till användarens kurs relativt norr och anger den vinkel som användaren måste rotera för att ha en kurs rakt mot målet.
 
-Aliquam quis nibh quis justo elementum viverra. Vestibulum ipsum.
-Integer sit amet urna id lorem condimentum pretium. Nam adipiscing
-lobortis purus. Donec at libero id augue interdum vulputate. Curabitur
-imperdiet suscipit metus. Curabitur ac quam sed lacus accumsan
-posuere. Quisque pharetra mi sit amet enim. Curabitur quis elit. Lorem
-ipsum dolor sit amet, consectetuer adipiscing elit. Sed ultricies
-aliquet lorem. Proin posuere tincidunt diam. Donec quis orci non leo
-elementum nonummy. Donec urna lectus, fringilla at, tempus id, auctor
-a, wisi. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Suspendisse blandit. Nam wisi.
-Phasellus egestas lacus ut lorem. Suspendisse sapien. Fusce non dolor
-ac odio tempus placerat.
+HÄR HAR VI FORMLER VI KAN STOPPA IN. FRÅN SPATIAL SOUND FOR NAVIGAT.. SIDA 3.
 
+    \section{GPS}
+
+GPS är ett system for satellitnavigering där användare med en GPS-mottagare kan bestämma sin position. Positionen bestäms med hjälp av triangulering från 3 satelliter där varje satellit räknar ut avståndet mellan satellit och användare. Med tre olika avstånd kan position bestämmas och nämns i longitud (breddgrader) och latitud (längdgrad) \citep{Kaplan2005}. Altitud kan också bestämmas med en fjärde satellit men används inte i denna studie. Med hjälp av två positioner med varsin lat- och longitud kan absolut bäring från en position till den andra räknas ut. Den kortaste distansen mellan två koordinater blir här inte en rak linje utan en båge eftersom jorden är en sfär. Därför måste följande funktion användas:
+
+\begin{quote}
+
+\end{quote}
 
 \chapter{Prototypen}
 
-Vestibulum sollicitudin magna quis ipsum. Phasellus nec dolor. Quisque
-laoreet, mi et porttitor tincidunt, leo mauris ultrices purus, eget
-tempus orci neque vel sapien. Pellentesque tempus pulvinar diam. Ut
-eleifend posuere lectus. Maecenas at justo vel lorem auctor
-pellentesque. Cras mattis laoreet ante. Mauris vitae sem et tellus
-gravida ornare. Donec a risus. Pellentesque ac nunc at leo tempus
-sagittis. Morbi enim. Sed nibh quam, fermentum id, hendrerit id,
-semper et, metus. Nullam congue enim id eros. Phasellus facilisis
-mollis mi. Nam laoreet cursus justo. Curabitur placerat varius lectus.
+Baserat på teorin utvecklades en prototyp för att användas under undersökningen. Prototypen skapades i utvecklingsmiljön Xcode med programmeringsspråket Swift 2, för att användas på en iPhone/iOS. För att det spatialiserade ljudet ska fungera krävs att användaren använder hörlurar.
+
+Prototypen tar emot en lista på GPS-koordinater och skapar utifrån dessa en rutt. När användaren startar navigeringen längst rutten identifieras användarens position samt riktning, varpå prototypen beräknar avstånd samt relativ bäring till den aktiva ruttpunkten. Dessa värden används sedan för att spatialisera ljudkällan.
+
+När användaren är tillräckligt nära ruttpunkten signalerar prototypen ruttpunktsbytet genom att spela upp ett pling-ljud och därefter byta den aktiva ruttpunkten till nästa i listan. Detta upprepas tills det inte finns några ruttpunkter kvar på rutten.
 
 \section{Spatialisering av ljudkällan}
+AVFoundation är Apples grundläggande ramverk för att processera ljud och bild. Det ger utvecklaren tillgång till klasser för att interagera med ljud via så kallade noder och dela upp funktionaliteten i logiska bitar. För att spatialisera ljudet skapades en spelarnod samt en omgivningsnod. Spelarnoden är ansvarig för att spela upp ljudet, som behöver vara i mono för att senare kunna spatialiseras. 
 
-Donec viverra, velit non dapibus consectetuer, est tellus porta orci,
-vel convallis elit tortor sed massa. Aliquam erat volutpat. Nullam et
-nibh. Nunc posuere. Nullam vulputate convallis ligula. Integer lorem
-wisi, porta eget, placerat quis, sollicitudin vitae, diam. Maecenas
-non tellus in tellus mollis placerat. Aenean eget ligula. Suspendisse
-bibendum eros non orci. Vestibulum ante ipsum primis in faucibus orci
-luctus et ultrices posuere cubilia Curae; Quisque id tellus ac est
-suscipit sodales. Curabitur placerat, odio ut cursus accumsan, libero
-lectus consectetuer risus, at lobortis ligula nibh quis odio.
-Phasellus ac nibh. Vivamus a lectus ut pede scelerisque aliquam. Sed
-vestibulum erat vitae nunc. Quisque non neque.
+Omgivningsnoden förväntar sig att bli ihopkopplad med en spelarnod och om denna spelarnod skickar in en mono-signal kan den spatialisera ljudet. Spatialiseringen skapas genom att spelarnoden samt omgivningsnoden tilldelas en plats i ett högerortienterat tredimensionellt kartesiskt koordinatsystem. Enhetslängden är en verklig meter vilket lämpar sig väl för prototypen. Omgivningsnoden kan även tilldelas en orientering i yaw, pitch och roll för den implicita lyssnaren (som är användaren).
 
-Aliquam augue. Mauris ipsum wisi, luctus et, volutpat non, tincidunt
-ac, augue. Morbi posuere diam nec arcu. In ut mi sit amet turpis
-fermentum posuere. Maecenas in lorem. Maecenas tincidunt accumsan
-odio. Nulla mauris. Cras ac elit eget tortor vulputate venenatis. Nam
-quam urna, consequat nec, dictum sed, mollis nec, justo. Ut velit.
-Nunc nibh arcu, consequat at, venenatis eu, ultrices cursus, lectus.
-Sed blandit blandit ante. Praesent in nisl. Nullam nibh erat, ornare
-quis, iaculis in, imperdiet id, ligula. Nullam odio velit, semper ac,
-lobortis sed, rhoncus vitae, dolor. Duis ultricies libero sed velit.
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-ridiculus mus. Morbi vestibulum magna a purus.
+Vid användning för spatialisering av ljud använde vi oss av ramverkets inbyggda HRTF-algoritm. Den förväntar sig att positionen för spelarnoden och omgivningsnoden tillsammans med omgivningsnodens orientering är definierad. 
+
+För att undvika allt för komplicerade algoritmer i ljud-klasserna tilldelades omgivningsnoden (lyssnaren) positionen (0,0,0) i det simulerade koordinatsystemet och spelarnoden platsen (0, 5, -z) där -z betyder avståndet ``rakt fram'' från omgivningsnoden. 5:an betyder att punkten befinner sig 5 meter upp i luften. Anledningen till att spelarnoden befinner sig 5 meter upp i luften är för att detta gör det enklare att avgöra hur nära användaren befinner sig. För att simulera ljudkällans riktning roterades omgivningsnoden genom att hela tiden uppdatera dess yaw-värde (implicita lyssnarens rotering) till den relativa bäringen. Relativa bäringen beräknas utifrån telefonens riktning (som är användarens riktning) varje gång telefonens hårdvara uppdaterar riktningen och avståndet till spelarnoden beräknas genom GPS-datan av användarens position och ruttpunktens position.
+
+På grund av som tidigare nämnt att det kan vara svårt att skilja på ljud framför eller bakom implementerades en ``obstruction'' (ljudet går inte rakt till örat, utan måste gå runt ett hinder. I detta fallet måste det gå runt själva örat) när ljudet ligger bakom användaren. Denna obstruktion verkar som ett lågpassfilter.
+
+Ljudkällan valdes till musikstycket Walk On The Wild Side med Lou Reed. Låten är dynamisk och utan några tysta partier, något som studien ONTRACK rekommenderat. Ljudfilen som ursprungligen var i stereo gjordes om till mono i programmet Audacity och sattes i prototypen på upprepande spelning.
 
 \section{Förenklingar}
 
-In hac habitasse platea dictumst. Suspendisse sit amet dolor a wisi
-auctor interdum. Duis ut diam ut arcu sodales pulvinar. Etiam a
-ligula. Proin arcu. Fusce pulvinar porta felis. Vestibulum vulputate.
-Nullam posuere, nunc ac rhoncus auctor, dolor risus vestibulum nibh,
-non fringilla nunc nibh quis lacus. Suspendisse scelerisque
-pellentesque felis. Suspendisse nisl nibh, viverra sit amet, lobortis
-in, commodo ac, arcu. Aenean blandit erat nec magna. Praesent
-fermentum.
+Hårdvaran i iPhone 6 uppdaterar med den mest batterikrävande inställningen GPS-position en gång per sekund. Prototypen har inte utvecklats med någon algoritm för väg-följande, utan utgår från den senast rapporterade positionen. Uppdateringsfrekvensen är enligt utvecklingsstudien tillräckligt hög för att ljudet inte ska upplevas som ryckigt
+
+För att kunna uppdatera telefonens riktning förväntas applikationer först specificera vilken orientering telefonen kommer att användas i. Prototypen använder sig av porträtt-läget vilket innebär att vektorn för att beräkna riktningen går vertikalt längst med iPhones långsida. Den inbyggda kompassen har hög precision och rapporterar direkt den känner av en ändring. Prototyen är utvecklad med ett filter på 1 grad, vilket betyder att riktningen bara rapporteras som uppdaterad om skillnaden från den senast rapporterade riktningen är mer än 1 grad. 
+
+Om ljudet befinner sig bakom användaren har ett filter implementerats med avsikt att göra det enklare för användaren att uppmärksamma detta. AVFoundation ger tillgång till ett filter kallat obstruction, detta simulerar en bortfiltrering av det direkta ljudet från spelarnoden.
 
 \section{Utvecklingsstudie}
 
-Sed consectetuer vestibulum risus. Fusce eget ligula. Maecenas felis
-dui, posuere a, accumsan quis, fringilla ac, est. Morbi vestibulum,
-orci vel luctus cursus, lectus dui interdum wisi, nec posuere metus
-nibh vitae sapien. Praesent quis mi at libero volutpat vehicula. Nulla
-facilisi. Vivamus dapibus venenatis eros. Integer tristique lacinia
-mauris. Ut vulputate faucibus mi. Morbi pretium pellentesque mi.
-Aliquam in sapien sed sapien ultricies feugiat. Sed et est a velit
-lacinia convallis. Etiam velit nisl, vehicula nec, sagittis et, porta
-sed, sapien. In dignissim. Sed ligula mauris, lobortis eget,
-scelerisque id, vestibulum et, lorem. Mauris consequat metus nec
-risus. Nulla auctor nulla id dolor.
+Under slutfasen av prototypens utveckling utfördes en utvecklingsstudie med avsikt att kalibrera vissa parametrar. Detta gjordes iterativt med kontinuerlig utvärdering av oss för att hitta värden som var bäst lämpade för det tilltänkta utvärderingsområdet. De parametrar som bestämdes under utvecklingsstudien var uppfångsradien, vilket avstånd ljudet skulle sluta försvagas samt filter för ljud bakom.
 
-In hac habitasse platea dictumst. Proin aliquam tincidunt risus.
-Mauris ipsum. Suspendisse lectus. Quisque at augue. Praesent
-adipiscing tortor vel dolor. Pellentesque habitant morbi tristique
-senectus et netus et malesuada fames ac turpis egestas. Nulla neque.
-Sed at orci. Fusce vestibulum aliquam libero. Nam adipiscing, metus
-sit amet aliquam pulvinar, magna nunc tristique pede, pellentesque
-porta erat eros eget odio. Aenean turpis tortor, porta vel, vestibulum
-a, imperdiet eget, wisi. Curabitur massa risus, consectetuer at,
-hendrerit eu, convallis non, libero. Etiam nulla tortor, pharetra ut,
-bibendum et, molestie nec, sapien. Nullam sollicitudin. Fusce sit amet
-nunc nec ipsum vehicula bibendum. Maecenas eu lacus. Nulla interdum,
-neque sit amet pharetra interdum, erat pede eleifend lectus, ac
-consectetuer purus urna quis wisi. Integer pretium nunc ut dui.
+Utvecklingsstudien gick till så att en av oss skapade en påhittad rutt i området där testrutten senare skulle läggas varpå den andra testade rutten utan att veta om dess utformning. Sedan diskuterades de eventuella svårigheter och kalibrerade värdena därefter.
 
+Efter utvecklingsstudien bestämdes uppfångsradien till 15 meter. Detta var det avstånd vid vilken navigeringen kändes naturlig. Vid mindre uppfångsradie var vi ofta tvungna att stanna och vänta in att GPS:en skulle rapportera en korrekt position. Då uppfångsradien är mindre ökar sannolikheten att felaktiga positioner är utanför uppfångsarean. Målet var att göra uppfångsradien så liten som möjligt, då detta möjliggör mer precis navigering.
+
+Ljudstyrkans referensavstånd fastställdes i stil med uppfångsradien till 15 meter, vilket betyder att ljudet vid detta avstånd har maximal styrka. Styrkan avtar sedan linjärt tills användaren befinner sig på 200 meters avstånd, där ljudstyrkan är 0.4 av den maximala. Ett längre avstånd än detta påverkar inte ljudets styrka.
 
 \chapter{Metod}
 
-Ut iaculis fermentum augue. Maecenas vel pede. Nunc enim odio, commodo
-vitae, faucibus vel, ultricies vitae, mauris. Duis vitae nibh a nunc
-consequat bibendum. Nam tincidunt libero sodales dolor. Aliquam
-tempus, mi vitae ultrices facilisis, nibh lacus cursus wisi, at
-tristique mi odio eget nulla. Donec lectus risus, mollis bibendum,
-suscipit nec, aliquam quis, eros. Donec tortor. Duis blandit
-condimentum orci. Quisque in ante vitae risus rutrum feugiat. Nulla
-sapien. Proin ipsum nibh, condimentum at, ullamcorper vel, bibendum
-et, elit. Etiam malesuada eros sit amet pede. Duis arcu. Fusce a mi.
+För att kunna utvärdera möjligheterna och begränsningarna med ett system för navigering baserad på spatialiserat ljud utfördes observerade användartester med en prototyp samt en uppföljande enkät. Testet utfördes enskilt av deltagarna.
 
-Donec in elit. Integer leo. Curabitur ornare volutpat erat. Vestibulum
-lacinia, eros sit amet dictum consectetuer, neque eros auctor elit, et
-mollis felis metus a ligula. In lacinia sapien sed dolor. Maecenas non
-magna id wisi dapibus dignissim. Suspendisse fringilla diam at lacus.
-Praesent sit amet lorem. Vivamus fermentum, felis at vehicula semper,
-leo elit pulvinar neque, quis posuere ipsum elit eu odio. Donec et dui
-non quam sodales interdum.
+Fältstudier innebär att det är svårt att testa specifika hypoteser och variabler. Det leder till att det kan vara problematiskt att finna orsaker för beteende eller problemen med det som testat. Det går däremot att se hur användare använder produkten och hur de reagerar på den. \citep{Rogers2011}
 
-\section{Definitioner}
+I prototypen skapades en rutt bestående av cirka 30 ruttpunkter. Dessa ruttpunkter läggs i ordning och prototypen använder sig av telefonens hårdvara för att hämta användarens position och riktning för att räkna ut den relativa bäringen samt avståndet till nästa ruttpunkt. Dessa värden används för att filtrera ljudkällan så att användaren uppfattar ljudet att komma ifrån ruttpunktens position.
 
-Aenean posuere velit eget magna. Sed neque tellus, tempor eget, mollis
-eget, pulvinar sed, elit. Phasellus feugiat mattis tortor. Nulla sed
-massa quis lacus tincidunt hendrerit. Praesent aliquet tristique arcu.
-Vestibulum sed est at odio blandit porttitor. Quisque a justo. Nunc a
-libero. Curabitur ut libero quis orci tempor interdum. Quisque luctus
-pede vel mauris. Donec velit. Vestibulum placerat pulvinar elit.
-Aliquam erat volutpat.
+\section{Utforming av rutten}
 
-Fusce tristique enim eget est. Donec vulputate, tortor vel dapibus
-pretium, pede ante sagittis ligula, eu tempus lorem eros sit amet
-elit. Pellentesque pede pede, sodales id, nonummy eget, condimentum
-ut, urna. Quisque sed metus nec lorem imperdiet eleifend. Phasellus
-non massa vel leo pretium tristique. Ut feugiat accumsan magna. Nulla
-lectus risus, ultricies id, suscipit ac, commodo sed, nulla. Donec
-neque eros, sollicitudin sit amet, mollis sit amet, bibendum ac, sem.
-Aliquam sed nisl id diam vestibulum accumsan. Integer purus quam,
-commodo id, placerat ut, malesuada id, magna. Suspendisse elit turpis,
-vehicula eu, imperdiet et, aliquet ac, risus. Nulla mollis nibh sit
-amet magna. Nullam dui pede, volutpat in, tempus eu, rhoncus eget,
-orci. Pellentesque in neque. Nunc eu pede ut sem tempus dictum. Donec
-vel mauris placerat lorem consectetuer sollicitudin. Praesent ultrices
-lobortis sapien. Mauris vel nisl vitae elit ullamcorper dapibus.
+Rutten lades runt Sophiahemmet för att det fungerade bra med att ha starten i utkanten av KTH:s campus, något som skulle göra det enklare för testdeltagarna. Sophiahemmet är även ett lugnt område med få bilar och med relativt lite folk i rörelse. Alternativet hade varit att navigera runt Östermalm, men detta förslag förkastades eftersom en för stor sannolikhet för oberäkneliga/oförutsedda variabler skulle kunna ha en för stor påverkan av resultaten. Mängden byggnader skulle också kunna inverka negativt på GPS:ens precision för mycket.
 
-\section{Huvudsaken}
+Vid utformningen av rutten låg fokus på att täcka så många av de möjliga navigationssituationerna som möjligt en viktig faktor. Sekundärt fokus var att göra rutten så verklighetsbaserad som möjligt, trots att start och slutpunkten skulle vara i samma område.
 
-Sed tincidunt erat quis leo. Integer vestibulum massa a tellus.
-Pellentesque eu lacus in quam euismod volutpat. Donec ut nulla. Morbi
-mi diam, posuere ac, consectetuer in, iaculis quis, ante. Ut eleifend.
-Morbi sagittis, diam et rutrum molestie, orci magna tempus lectus, non
-euismod nunc quam nec velit. Donec leo. Cum sociis natoque penatibus
-et magnis dis parturient montes, nascetur ridiculus mus. Quisque
-hendrerit. Morbi mattis. Vivamus vulputate dolor in ante. Curabitur
-accumsan adipiscing leo. In quis ante. Morbi arcu. Curabitur varius
-rutrum sem.
+4.1.1 Navigeringskategorier
+Långa raksträckor är i figuren markerade med blått och utmärker sig genom att avståndet mellan ruttpunkterna är långt och att det är en raksträcka Rutten innehåller två partier med dessa:
+D-E är är utformad för att innehålla så få ruttpunkter som möjligt.
+HIJ där undersökningen istället är utformad för att ge testdeltagaren feedback när den nått punkt I, trots att den efter det ska fortsätta i samma riktning som den kom ifrån.
 
-Donec facilisis, lacus sollicitudin malesuada pharetra, eros massa
-elementum massa, eget consequat felis leo et libero. Vivamus id diam
-quis ligula vehicula varius. Nunc tempus massa vel orci. Fusce
-laoreet. Praesent et risus. Vestibulum ante ipsum primis in faucibus
-orci luctus et ultrices posuere cubilia Curae; Fusce metus elit,
-fringilla nec, facilisis id, sollicitudin in, tortor. Curabitur tellus
-ante, lacinia eget, gravida nec, sollicitudin quis, quam. Integer
-vitae felis. Nullam tellus purus, feugiat vitae, ultricies ut, feugiat
-eu, turpis. Praesent urna orci, aliquet a, fringilla vitae, molestie
-ac, pede. Vivamus quam orci, luctus nec, aliquet eu, consectetuer ut,
-magna.
+Svagare svängar är i figuren markerat med grönt och det är har tre partier av dessa.
+ABC
 
-\subsection{Bevis}
+Dela in i kategorier. Raksträcka / hårda svängar / svaga svängar. Nära eller långt mellan ruttpunkterna.
+Dessa är figuren markerade med rött och undersöker hur prototypen lyckas med att guida testdeltagaren till att göra skarpa svängar. I samtliga fall finns det även visuell feedback i omgivningen som kan komma att guida testdeltagaren. Det finns tre partier.
 
-Sed venenatis feugiat arcu. Nullam neque. Aliquam erat volutpat.
-Praesent euismod, nibh ut interdum tincidunt, leo metus facilisis
-ligula, ut sagittis est elit non elit. Nulla vitae augue. Cras id
-diam. Maecenas vel tortor ac dolor porttitor cursus. Phasellus metus
-ipsum, condimentum a, mollis eget, dapibus ac, lorem. Nullam sodales
-vulputate sapien. Praesent rutrum blandit augue. Etiam in pede in
-neque luctus hendrerit. Vivamus eget ante. Mauris turpis ipsum,
-egestas in, commodo eget, dapibus et, dui. Donec scelerisque. Sed a
-neque. Integer at quam eu augue imperdiet vehicula. Aliquam orci eros,
-pellentesque eget, adipiscing eu, tristique ut, tellus.
+CD, EFGH samt MN.
 
-Aenean quis justo at mi vestibulum bibendum. Sed at pede eu lacus
-euismod condimentum. Cras in lacus. Nulla facilisi. Donec eu arcu quis
-wisi fringilla venenatis. Pellentesque habitant morbi tristique
-senectus et netus et malesuada fames ac turpis egestas. Quisque neque.
-Sed scelerisque rhoncus est. Maecenas a dolor. Aliquam non justo.
-Pellentesque habitant morbi tristique senectus et netus et malesuada
-fames ac turpis egestas.
+CD samt FGH kräver alla att användaren svänger i närheten av 45 grader, medans EF samt NM båda kräver att användaren svänger mer än 45 grader och alltså byter riktning helt.
+
+    \section{Studiens utformning}
+
+Testdeltagaren blev först tilldelade ett papper med instruktioner för undersökningen, som även innehöll ett användningstips för prototypen. (Referera till att detta varit en faktor för framgång i en tidigare undersökning. VILKEN?) SE BILAGA.
+
+Testdeltagaren tilldelades efter detta prototypen med en uppvärmningsrutt aktiverad. Denna rutt bestod av två ruttpunkter placerade i närheten av studiens startplats.
+
+När testdeltagaren slutfört testet av prototypen ändrades rutten till den för undersökningen avsedda och  loggningen aktiverades. Testledaren förklarade testet inlett och observerade genom att följa i deltagarens spår med ett avstånd på cirka 20 meter. Förutom att observera testdeltagarens position och rörelse så hade testledaren möjlighet att avbryta testet om testdeltagaren under en minut inte rört sig närmare ruttpunkten.
+
+Efter avklarat eller avbrutet test fick testdeltagaren fylla i en utvärderingsenkät på en dator i lokalen där undersökningen inletts, samtidigt som testledaren ritade rutten som deltagaren gått på en karta samt antecknade eventuella händelser under testet. Inga diskussioner fördes med deltagaren innan denne kunde fylla i enkäten, detta för att inte påverka svaren.
+
+    
+    \section{Enkätens utformning}
+För att svara på studiens problemformulering och arbetsfrågor samt försöka mäta användarupplevelse och användbarhet togs en enkät fram. Enkäten använde både stängda kvantitativa semantiska skalor och öppnare kvalitativa kommentarer.
+Semantiska skalor är en skala mellan två polära attityder. Detta användes för att få en allmän överskådan om prototypen var användbar inom de frågor som ställs i denna studie och om upplevelsen var god för användarna så att de är benägna att använda tekniken. De utförliga kommentarerna användes för att samla mer information om vad de gillade och inte gillade, intressanta situationer och fel, och tankar om själva produkten. \citep{Rogers2011}
+
+    \section{Urval av testdeltagare}
+Alla de tretton testdeltagarna är studenter från det Medietekniska programmet vid Kungliga Tekniska Högskolan vid campus Valhallavägen i Stockholm. Åldersspannet var 19 till 27 år och de anses på grund av sin utbildning ha hög teknisk kompetens. Samtliga testdeltagare blev tilldelade att delta i denna undersökning som en del av sin utbildning via kursen Programintegrerande kurs i medieteknik.
+
+De kontaktades via mail med en länk för att välja en tid för undersökningen, där antalet tillgängliga tider var tre gånger så stort som antalet tilldelade testdeltagare. Detta med avsikten att alla testdeltagare skulle kunna hitta en passande tid och därmed inte känna någon stress under undersökningen, vars tidsåtgång varierar mellan deltagarna.
 
 \chapter{Resultat}
+Undersökningen pågick under två veckodagar. Vädret var båda dagarna halvklart och temperaturen var likadan. 
+
+Testdeltagare sex har strukits från resultatet på grund av att denne missuppfattat skalorna och frågorna i enkäten och därför har svar som signifikant skiljer sig från resten. Mer om detta i metodkritiken.
+
+Av de tolv testdeltagarna var det sju som framgångsrikt navigerade hela rutten. Fyra av dessa hade en eller fler gånger problem att hitta en ruttpunkt. Medans de tre resterande hela tiden höll sig till den avsedda vägen.
+
+Av de fem testdeltagarna som inte navigerade hela rutten fick en avbryta innan ruttpunkt M på grund av problem med GPS. Samtliga andra av det avbrutna fick avbryta testet innan ruttpunkt Q eftersom de fastnat på fel sida av ett staket.
+
+\section{Resultat av navigering}
+Tabell 1 visar för varje ruttpunkt vilken mängd testdeltagare som nådde den och på vilket sätt. Rutten är uppdelad i en delrutt för varje ny ruttpunkt. ``Nådde via avsedd väg'' betyder att testdeltagaren tog den kortast möjliga vägen till nästa ruttpunkt. ``Nådde via ej avsedd väg'' innebär att deltagaren antingen gjorde ett fel i navigeringen så att den var tvungen att gå tillbaka, eller att den fastnat bakom t.ex. ett staket. ``Testet avrbröts'' betyder att testledaren i enlighet med metoden beslutade att avbryta testet eftersom användaren kommit allt för långt bort från den avsedda rutten.
+
+Figur Xs högra bild är ett exempel på navigering som klassificeras som ej avsedd. Testdeltagaren har missat att göra en skarp sväng vänster när den nått ruttpunkt E och sedan tagit en omväg på grund av att den hamnat på fel sida att ett staket. Samtliga fyra testdeltagare som nått ruttpunkt F via en ej avsedd väg har navigerat på ett liknande sätt.
+
+Fig. Y.3. visar en deltagare vars test avbrutits efter att den missat en viktig del av navigationen.
+Navigationen från ruttpunkt P till ruttpunkt Q var den delrutt där flest användare var tvungna att avbryta testet eller navigerade på ett icke avsett sätt. Figur Y.2. är typiskt för de användare som klarat navigationen men begått ett misstag. Figur Y.3. är typisk för de användare som vars test avbrutits.
+
+\section{Allmän användarupplevelse}
+På enkätfrågan ``Hur var den generella upplevelsen?'' som besvarades på en tiogradig skala där 1 motsvarade ``mycket dålig'' och 10 motsvarade ``mycket god'' svarade alla deltagare inom betyget 8-10 där medelbetyget var 8,42 (standardavvikelse 0,67), medianen 8 och typvärdet 8.
+
+Enkätfrågan ``Vad tyckte du om detta sätt att navigera på?'', graderad från 1 ``Mycket dålig'' till 10 ``Mycket bra'' besvarades med medelbetyg 7,75 (standardavvikelse 1,66), medianen 8 och typvärdet 9.
+
+Kommentarerna från deltagarna visade att de flesta var positiva till denna metoden. Många var positivt överraskade över att det funkade bra samt tyckte det var roligt och spännande att testa ny teknik. Två nämner att det var praktiskt om man ändå lyssnar på musik samtidigt. Tre stycken nämner explicit det positiva med att man inte behöver titta på en skärm, medan en deltagare skriver att han var för koncentrerad på hörseln för att vara uppmärksammad på omgivningen. Deltagare 9 tyckte att det fungerade men att det inte var ``super praktiskt'' [sic]. Svar inkluderar också att det var ovant men att man lärde sig som Deltagare 12 skriver:
+
+\begin{quote}``Efter ett tag när man lärt sig kunde man slappna av och gå utan att tänka på att man går åt rätt håll.'' -Deltagare 12
+\end{quote}
+
+\section{Användbarhet}
+Alla deltagare svarade ``Ja'' på att de kände sig säkra på var det skulle gå under navigeringen. Kommentarerna och observationerna visade dock att vissa osäkerheter dök upp under rutten. 
+Många kommentarer handlar om det visuella. De hörde och förstod vilken riktning ljudet kom ifrån men de var osäkra på om de fick gå där. Några få fall försökte de följa ljudet för exakt, vilket testledarna också såg under deras observation; de gick i skogen bredvid gångvägen och i några få fall försökte de i början av rutten gå rakt igenom hinder istället för att gå runt eller följa vägar och stigar.
+
+En deltagare tyckte det var enklare när det var längre och raka sträckor i jämförelse till Deltagare 10 som hade svårt att höra rakt fram. Deltagare 8 nämner att det blev osäkert när låten slutade och började om eftersom ljudet blev tyst.
+
+Alla deltagare svarade ``Ja'' på frågan om de skulle kunna tänka sig att använda denna tekniken. Intervjusvaren visade också här ett återkommande positiv inställning till att kunna navigera utan att ta upp mobilen eller titta på en karta. De nämner möjliga användningsområden som när man joggar eller navigerar i urbana miljöer där det är mer saker att hålla reda på. Deltagare 8 lyssnar ofta på musik när denne navigerar och tycker det skulle kunna vara ett bra sätt att navigera på. Deltagare 13 tror att det skulle passa bättre i öppnare områden ifall vad man hör inte överensstämmer med vad man ser. Två deltagare hade inte samma åsikter som de andra; Deltagare 7 skulle inte använda detta till just navigering och Deltagare 9 hade endast använt detta om karta absolut inte var tillgänglig.
+
+\begin{quote}``Jag tänker att det beror på i vilken situation jag ska navigera. Ska jag nånstans och har bråttom skulle jag nog vilja se vägen i förväg. Om jag tex hade navigerat genom en ny plats för att upptäcka platsen hade jag väldigt gärna använt detta sätt. Jag skulle dock verkligen kunna tänka mig det här sättet i kombination med karta, så att jag kan titta på kartan om jag känner mig osäker.'' -Deltagare 10
+\end{quote}
+
+På frågan ``Var detta ett effektivt sätt att navigera på? Jämför med karta till exempel.'' 
+deltagarna:
 
 \begin{table}[h]
   \begin{center}
@@ -366,8 +303,28 @@ fames ac turpis egestas.
     Övrigt/Kommentarer & 6 \\
     \end{tabular}
   \end{center}
-  \caption{Svar från en fråga}
+  \caption{Var detta ett effektivt sätt att navigera på?}
 \end{table}
+
+De flesta som svarade ``Övrigt'' var positivt inställda men några få var mer splittrade. Några nackdelar som togs upp var att inte få en överblick över hela rutten eller veta hur nästa ruttpunkt ligger och att man kanske inte har hörlurar på sig i alla situationer. Deltagare 10 nämner att det kanske inte är effektivt om man har bråttom då det är lättare att få en snabb överblick på rutten om man har en karta. Deltagare 4 är inne på samma spår:
+
+\begin{quote}``Med karta kan det vara svårt att veta vilket håll man går på en väg, dock kan karta ge en överblick av hela vägen vilket detta inte kan.'' -Deltagare 4
+\end{quote}
+
+På frågan ``Hur lätt/svårt var det att förstå hur det fungerade? (Varför?)'' svarade de allra flesta att det var lätt att lära sig och förstå hur det fungerade. Tre stycken svarar att de hade lite svårt att förstå i början men att de sedan lärde sig. En deltagare nämner att det var lätt att höra vart man skulle gå men att det var svårt att höra om man gick åt rätt håll. Testledarnas observationer överensstämmer med denna data.
+
+Enligt svaren från frågan ``Hur lätt/svårt var det att lokalisera ljudet? (Förklara varför?)'' hade de flesta deltagarna inga större problem med att lokalisera ljudet. De flesta använder ordet ``lätt'' i kommentarer även om några hade lite svårare i början så lärde de sig efter ett tag. Några kommentarer nämner de olika ljudnivåerna på musiken i prototypen som ett litet problem för att de inte hörde då ljudet var lågt. En deltagare kommenterade också om att övriga ljud gjorde det svårt ibland. Att rotera mobilen för att snabbare lokalisera nämndes av två deltagare som en lätt metod för att lokalisera sig på och en utav de två kommenterade även hur viktigt det är att det inte har en fördröjning när man snurrar. Bara en deltagare hade problem med att höra avstånd och bara en deltagare nämnde att det var svårt att höra skillnad på rakt fram och rakt bakåt såsom det är lätt att skilja höger och vänster.
+
+\begin{quote}``Övriga ljud gjorde det lite svårt ibland, samt när låten tog slut innan den började om var det lite svårt att höra.'' - Deltagare 4
+\end{quote}
+
+\section{Ruttpunktsbyten}
+På frågan ``Hur tydligt var det med ruttpunktsbyten?'' var det överväldigande viktat mot att det var tydligt och lätt. Majoriteten svarade med en 10 eller 9 på en skala på hur tydligt det var från ``Inte alls tydligt'' till ``Mycket tydligt''. I de följande kommenteraren nämner flera att det var en tydlig signal och att man tydligt hörde att ljudet kom från en ny plats. Två deltagare hade lite svårare i början, men en vande sig efter ett tag och den andra som hade svårt menade att det berodde på att musiken sänktes och det hjälpte att roterara på telefonen
+
+Observationer under testerna visade också en viss osäkerhet, speciellt vid vissa ruttpunkter. Bytet mellan ruttpunkt G och H tog de flesta utan att stanna upp medans ruttpunkt P (grinden) gav de flesta huvudbry. Förutom dessa två byten var det varierande under ruttpunktsbytena då de flesta stannade upp när det var ruttpunktsbyte för att omorienteria sig. Några få fortsatte utan att stanna upp.
+
+\section{GPS-fel}
+Deltagare 10:s undersökning avbröts på grund av att GPS. Testledaren observerade att deltagaren trots att den missat en ruttpunkt fortsatte att gå mycket bestämt åt fel håll. Efter ett tiotal meter stannade deltagaren till och bytte riktning helt, efter vilket deltagaren verbalt uttryckte sina problem med att tyda instruktionerna till testledaren. Testledaren bestämde att avbryta testet.
 
 \begin{figure}[h]
   \centering
@@ -399,22 +356,82 @@ fames ac turpis egestas.
     \caption{Pictures of animals}\label{fig:animals}
 \end{figure}
 
-Aenean quis justo at mi vestibulum bibendum. Sed at pede eu lacus
-euismod condimentum. Cras in lacus. Nulla facilisi. Donec eu arcu quis
-wisi fringilla venenatis. 
-\begin{quote}
-``Jag säger så här'' -Steve McQueen
-\end{quote}
-Pellentesque habitant morbi tristique
-senectus et netus et malesuada fames ac turpis egestas. Quisque neque.
-Sed scelerisque rhoncus est. Maecenas a dolor. Aliquam non justo.
-Pellentesque habitant morbi tristique senectus et netus et malesuada
-fames ac turpis egestas.
+\chapter{Analys / Diskussion}
+    \section{Generellt}
+Med grund i att nästan alla deltagare klarade av att navigera rutten fram till punkt P går det att dra slutsatser om att den i prototypen implementerade tekniken går att använda sig av för navigering. Svagheter med tekniken visar sig när placeringen av ruttpunkterna är bristfällig och när GPS tappar kontakt/noggrannheten.
 
+Alla deltagare som nådde ruttpunkt Q var framgånsrika i den fortsatta navigeringen, vilket tyder på att det
 
-\chapter{Diskussion}
+I utvecklingen av prototypen valde författarna att inte lägga mycket vikt på vilket ljud det är som spelas upp, då det enligt tidigare studier inte har någon stor påverkan. Det upptäcktes dock under utveckling att monotoma ljudtoner blev väldigt enformigt och jobbigt för upplevelsen vilket gjorde att en neutral låt valdes. Deltagarnas svar visade att ingen hade någon invändning mot detta vilket i sig kan betyda att det var ett för bra val av musik (förutom att det förekom tystare partier som när låten startade om). Under utvecklingstester märktes det dock att det var svårt att urskilja fram och bak vilket ledde till att ett filter implementerades om ljudet ligger bakom användaren. Det verkar dock inte som att ljudet spelar någon större roll, förutom de aspekterna som deltagarna nämnde. Detta resultatet ligger i samma linje som CYKELSTUDIEN vilket visar att detta skulle kunna vara ett bra sätt att implementera som en passiv navigations-assistans då användarna själva får välja ljudet. Om användarna själva får välja ljud, om de ens vill lyssna på på något med hörlurar, får de mer frihet i att använda detta. De kan även komplementera med karta om de så själva vill. Författarna föreslår då att denna teknik skulle kunna mjukt införas som en extra komplement i dagens navigationstjänster som till exempel Google Maps.
+
+Enligt resultaten var det inga stora problem för användarna att höra vilken riktning ljudet kom ifrån. 
+
+Prototypen som användes i undersökningen använde positions-data och riktning från en handhållen smarttelefon vilket betyder att användaren hörde ljudet i relation till hur de höll mobilen och hur den var riktad. Testledarna förklarade hur detta fungerade och gav tips till om hur man kunde använda det på bäst sätt och inte bli förvirrad. Att ljudet inte följer det egna huvudets rotation är såklart inte naturligt vilket kan förklara en liten inlärningströskel. I framtiden ser vi att det kommer smarta hörlurar med motion-sensor/GPS/kompass vilket kan göra denna tekniken ännu mer naturlig och användbar.
+
+ONTRACK \citep{Jones2008} hade liknande resultat. När allting fungerade som det skulle tyckte användarna om det.
+
+    \section{Fördelar}
+Det som flest deltagare kommenterat är möjigheten till att inte behöva titta på en skärm för att navigera, något som både i tidigare undersökningar och som antyds av deltagarna skulle göra användarna mer uppmärksamma på sin omgivning. Även om en deltagare uttrycker att den varit väldigt fokuserad på ljudet så är det för dem som har möjlighet en stor möjlighet..
+
+Slipper använda extra hårdvara
+
+Kan använda sig av vilken ljudkälla som helst.
+
+De flesta positiva till att använda denna teknik i fortsättningen.
+
+Inga problem att lokalisera ljudet.
+
+Inga jätteproblem att förstå hur det fungerar, 
+
+    \section{Nackdelar}
+
+Måste ha hörlurar.
+
+Det är mobilen, inte huvudet som bestämmer riktningen. Inte naturligt.
+
+GPS inte alltid tillförlitligt.
+
+    \section{GPS-fel}
+Detta upptäcktes även under utvecklingstester. Om det är mycket obstruktioner som höga träd eller byggnader påverkar detta GPS-noggrannheten. Eftersom ljudet är så exakt mot positionen kan det ställa till bekymmer i till exempel skog eller bredvid höga byggnader. Assisted GPS som används i moderna smartphones ser till att positionen ofta har hög noggrannhet men en ``fail-safe'' krävs förmodligen. Där ser författarna ett problem som behöver lösas genom bättre hårdvara, tekniker eller algoritmer. Ett förslag är att använda predictive(?). När användare följer en rutt och GPS:en tappar noggrannhet kan programvaran ``anta'' att användaren fortfarande följer rutten i samma takt. 
+
+Om användarens rapporterade GPS-position inte stämmer med verkligheten blir navigeringen felaktig utan att användaren har någon möjlighet att dubbelkolla sin position.
+
+Om användaren missförstår riktningen de ska navigera uppstår det problem med att dynamiskt guida dom rätt. Detta är dock mer ett problem med implementationen än med själva tekniken
+
+    \section{Placering av ruttpunkter}
+De två delar av rutten som flest testdeltagare upplevde problem med var från ruttpunkt E till ruttpunkt F samt mellan ruttpunkterna O, P och Q.
+
+Resultatet och testledarnas observationer indikerar att anledningen till svårigheterna med navigationen till ruttpunkt O beror på att ruttpunktsplaceringen var undermålig. När deltagarna nått ruttpunkt O var det ingen som hade problem med att nå ruttpunkt P. Ruttpunkt P var placerad bakom en grind som det var tänkt att testdeltagaren skulle gå igenom. Indikationen om att användaren nått ruttpunkt P kom dock innan testdeltagaren nått fram till eller gått igenom grinden. Detta beror på uppfångsradien på 15 meter och borde ha kompenserats för genom att lägga ruttpunkten längre in bakom grinden, så att ytterkanten av dess uppfångsradie tangerade grindens öppning.
+
+Något som vidare styrker detta argument med att ruttpunkt P var undermåligt placerad är att av de som gick igenom grinden klarade samtliga resten av rutten.
+
+För att motverka problemen som uppstod vid grinden finns det flera lösningar. Uppfångsradiusen och placering av ruttpunkter är två möjliga variabler där det finns möjligheter för justering. 
+När det är små svängar och många byten av punkter skulle en mindre uppfångsradie kunna vara en lösning. När uppfångsradien är låg kräver det dock mer precis placering av ruttpunkten.
+ Placeringen av punkten bakom grinden hade också kunnat vara längre bak med bibehållen uppfångsradie. Detta kan dock leda till förvirring om det även är en karta implementerad. Möjligen hade route-navigering fungerat bättre för att navigera genom detta parti. Detta ligger i linje med en tidigare studie där en slutsats var att route-navigering fungerar bättre på icke-familiär miljö och svårare partier \citep{Albrecht2016} men att båda metoder fungerade lika bra.
+
+    \section{Metodkritik}
+När man mäter användarupplevelse kan den styras av variabler som inte togs i beaktning i denna undersökningen som till exempel miljö, väder och val av musik. Denna studien använde ett musikstycke som författarna valde ut. Uteblivna kommentarer och svar utifrån musikvalen verkar det inte ha påverkat resultaten mot det negativ upplevelse, men kan däremot ha påverkat det mot positiv upplevelse.
+
+Formulärets utformning var inte helt genomtänkt. Vissa frågor hade dåliga svarsalternativ. Frågan ``Var detta ett effektivt sätt...'' var alternativen endast Ja, Nej eller Övrigt vilket ledde till om man svarade Ja eller Nej kunde de inte kommentera svaret. Då det var två som svarade Nej går det nu inte att veta varför de svarade ``Nej''. Skalorna var inte heller konsistenta med vilket nummer som var bra eller dåligt.
+
+Några följde ljudet för exakt och använde inte tekniken som en navigationsassistens. Våra instruktioner innehöll denna uppmaning, att inte försöka följa visuella ledtrådar. Testledarna var noga med att förklara att inte se någon prestige eller tävling i testet. Många deltagare verkade dock ta det lite för seriöst och försökte verkligen `lyckas'' bra.
+
+Enkäten svarades på direkt efter utfört test. Deltagarna hade innan testet inte fått någon information innan om vad de exakt skulle göra vilket förmodligen gav dem väldigt neutrala förväntningar, vilket låter bra i grunden. Svaren på enkäten visade att testet kanske överträffade deras förväntningar och genom att svara på frågor så tätt inpå kanske påverkade deras svar mot det mer positiva.
+
+Enkäten frågade om hur lätt det var att förstå/lära sig. Men under undersökningen hade vi en uppvärmingsrutt och ett användartips för att de skulle lära sig.
+
+Låg validitet, men ändå ett acceptabelt antal testdeltagare för att få svar på hur användare reagerar på prototypen.
 
 \chapter{Slutsats}
+En tekniskt enkel implementation av ett system för navigering med hjälp av spatialt sonifierat ljud gav goda resultat för navigering längst en bana utformad för att testa olika navigationssituationer. Tekniken lämpar sig väl för användare som har nytta av att ha sina händer samt visuella sinne befriat. Det kräver att användaren använder sig av hörlurar, men valet av ljudkälla är upp till användaren själv, där denna undersökning visat att musik är dugligt.
+
+Snäv navigering med hinder ställer krav på att uppfångsradie och placering av ruttpunkter är finjusterade. Route-navigering kanske bättre möjlighet inom denna aspekten.
+
+Det var 12 deltagare med i studien. Det är en acceptabel siffra för att testa användares behaviour och reaktioner på tjänsten, men inte nog för att ge några definitiva svar.
+
+Svagheter med systemet är att det är väldigt känsligt mot felaktig positonsdata. Användaren kan inte själv försäkra sig om att systemet utgår från dess riktiga positon, vilket gör det systemet svårt att lita på.
+
+Prototypen fungerar relativt bra med tanke på hårdvaran och begränsningarna, vissa förbättringar kan göras och hjälpande algoritmer kan skrivas. Testet visar det finns en vilja att använda tekniken och användare ser positivt på att inte behöva använda skärmen. Som tidigare studier verkar det inte spela någon större roll om vilket ljud man egentligen använder förutom att det inte är för låg ljudnivå eller för låga ljudsegment under ljudklippet. Ser inga problem med att användare får använda sitt egna ljud.
 
 \bibliographystyle{plainnat}
 \bibliography{refs}
