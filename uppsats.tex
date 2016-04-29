@@ -387,27 +387,19 @@ Prototypen som användes i undersökningen använde positions-data och riktning frå
 ONTRACK \citep{Jones2008} hade liknande resultat. När allting fungerade som det skulle tyckte användarna om det.
 
     \section{Fördelar}
-Det som flest deltagare kommenterat är möjigheten till att inte behöva titta på en skärm för att navigera, något som både i tidigare undersökningar och som antyds av deltagarna skulle göra användarna mer uppmärksamma på sin omgivning. Även om en deltagare uttrycker att den varit väldigt fokuserad på ljudet så är det för dem som har möjlighet en stor möjlighet..
+Det som flest deltagare kommenterat är möjigheten till att inte behöva titta på en skärm för att navigera, något som både i tidigare undersökningar och som antyds av deltagarna skulle göra användarna mer uppmärksamma på sin omgivning. De slipper också använda extra hårdvara då all hårdvara som krävs finns i telefonen. De verkar inte ha några problem att lokalisera ljudet med hjälp av ett musikstycke och vi ser att de förmodligen kan använda sig av vilken ljudkälla som helst.
 
-Slipper använda extra hårdvara
+Användbarheten är god då de flesta var positiva till att använda denna teknik i fortsättningen. Implementationen i denna prototyp är förmodligen inte den optimala och kan förbättras men ändå fungerar det. Det var inga stora problem att lokalisera ljudet. Någon enstaka hade problem att höra rakt fram vilket förmodligen är ett problem i implementationen.
 
-Kan använda sig av vilken ljudkälla som helst.
-
-De flesta positiva till att använda denna teknik i fortsättningen.
-
-Inga problem att lokalisera ljudet.
-
-Inga jätteproblem att förstå hur det fungerar, 
+Inga jätteproblem att förstå hur det fungerar
 
     \section{Nackdelar}
 
-Måste ha hörlurar.
+För att kunna få ut effekten av binauralt ljud behöver användaren använda hörlurar. Det är inte alltid att man använder hörlurar och vissa kanske aldrig använder hörlurar när de är utomhus. Om man samtidigt vill prata med någon kan stängda hörlurar skapa problem. Däremot skulle öppna hörlurar som läcker in utomstående ljud kanske fungera bättre.
 
-Det är mobilen, inte huvudet som bestämmer riktningen. Inte naturligt.
+Samtidigt är det telefonen som bestämmer riktningen i denna prototypen. Inte huvudet som är det naturliga sättet att lokalisera ljud på. Detta kan lösas med hörlurar med inbyggd GPS och kompass, så kallade smarta hörlurar.
 
-GPS inte alltid tillförlitligt.
-
-    \section{GPS-fel}
+    \subsection{GPS-fel}
 Detta upptäcktes även under utvecklingstester. Om det är mycket obstruktioner som höga träd eller byggnader påverkar detta GPS-noggrannheten. Eftersom ljudet är så exakt mot positionen kan det ställa till bekymmer i till exempel skog eller bredvid höga byggnader. Assisted GPS som används i moderna smartphones ser till att positionen ofta har hög noggrannhet men en ``fail-safe'' krävs förmodligen. Där ser författarna ett problem som behöver lösas genom bättre hårdvara, tekniker eller algoritmer. Ett förslag är att använda predictive(?). När användare följer en rutt och GPS:en tappar noggrannhet kan programvaran ``anta'' att användaren fortfarande följer rutten i samma takt. 
 
 Om användarens rapporterade GPS-position inte stämmer med verkligheten blir navigeringen felaktig utan att användaren har någon möjlighet att dubbelkolla sin position.
@@ -436,7 +428,7 @@ Enkäten svarades på direkt efter utfört test. Deltagarna hade innan testet inte 
 
 Enkäten frågade om hur lätt det var att förstå/lära sig. Men under undersökningen hade vi en uppvärmingsrutt och ett användartips för att de skulle lära sig.
 
-Låg validitet, men ändå ett acceptabelt antal testdeltagare för att få svar på hur användare reagerar på prototypen.
+Studien har låg validitet på grund av urvalet av testdeltagare. Men det är ändå ett acceptabelt antal testdeltagare för att få svar på hur användare reagerar på prototypen och hur det uppför sig med tekniken.
 
 \chapter{Slutsats}
 En tekniskt enkel implementation av ett system för navigering med hjälp av spatialt sonifierat ljud gav goda resultat för navigering längst en bana utformad för att testa olika navigationssituationer. Tekniken lämpar sig väl för användare som har nytta av att ha sina händer samt visuella sinne befriat. Det kräver att användaren använder sig av hörlurar, men valet av ljudkälla är upp till användaren själv, där denna undersökning visat att musik är dugligt.
@@ -453,11 +445,7 @@ Prototypen fungerar relativt bra med tanke på hårdvaran och begränsningarna, vis
 \bibliography{refs}
 
 \appendix
-    \addappheadtotoc
-    \noappendicestocpagenum
-    \chapter{Bilaga A}
-        hej
-    \chapter{Bilaga B}
-        hej
+\addappheadtotoc
+\chapter{Enkät}
 
 \end{document}
