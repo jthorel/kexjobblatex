@@ -272,14 +272,18 @@ Av de fem testdeltagarna som inte navigerade hela rutten fick en avbryta innan r
 
 \section{Resultat av navigering}
 
-\begin{table}
-    \begin{tabular}{ll|llllllllllllllllll}
-    ~ Ruttpunkt ~ B ~ C ~ D ~ E ~ F ~ G ~ H ~ I ~ J ~ K ~ L ~ M ~ N ~ O ~ P ~ Q ~ R ~ S ~ T\\ \hline
-    ~ Nådde via avsedd väg ~ 11 ~ 11 ~ 11 ~ 12 ~ 8 ~ 12 ~ 12 ~ 12 ~ 12 ~ 12 ~ 12 ~ 10 ~ 11 ~ 11 ~ 10 ~ 4 ~ 6 ~ 7 ~ 7 ~ \\
-    ~ Nådde via ej avsedd väg ~ 1 ~ 1 ~ 1 ~ 0 ~ 4 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 1 ~ 0 ~ 0 ~ 1 ~ 3 ~ 1 ~ 0 ~ 0 ~\\
-    ~ Testet avbröts ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 0 ~ 1 ~ 0 ~ 0 ~ 0 ~ 4 ~ 0 ~ 0 ~ 0 ~ \\
-    \end{tabular}
-\end{table}
+	\begin{table}[h]
+	\resizebox{\textwidth}{!}{
+	    \begin{tabular}{l|*{19}{|c}}
+	    Ruttpunkt & B & C & D & E & F & G & H & I & J & K & L & M & N & O & P & Q & R & S & T\\ \hline
+	    Nådde via avsedd väg & 11 & 11 & 11 & 12 & 8 & 12 & 12 & 12 & 12 & 12 & 12 & 10 & 11 & 11 & 10 & 4 & 6 & 7 & 7 \\
+	    Nådde via ej avsedd väg & 1 & 1 & 1 & 0 & 4 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 3 & 1 & 0 & 0\\
+	    Testet avbröts & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 4 & 0 & 0 & 0\\
+	    \end{tabular}
+	    }
+	    \caption{Resultat utifrån varje enskild ruttpunkt}
+	\end{table}
+
 Tabell 1 visar för varje ruttpunkt vilken mängd testdeltagare som nådde den och på vilket sätt. Rutten är uppdelad i en delrutt för varje ny ruttpunkt. ``Nådde via avsedd väg'' betyder att testdeltagaren tog den kortast möjliga vägen till nästa ruttpunkt. ``Nådde via ej avsedd väg'' innebär att deltagaren antingen gjorde ett fel i navigeringen så att den var tvungen att gå tillbaka, eller att den fastnat bakom t.ex. ett staket. ``Testet avrbröts'' betyder att testledaren i enlighet med metoden beslutade att avbryta testet eftersom användaren kommit allt för långt bort från den avsedda rutten.
 
 Figur Xs högra bild är ett exempel på navigering som klassificeras som ej avsedd. Testdeltagaren har missat att göra en skarp sväng vänster när den nått ruttpunkt E och sedan tagit en omväg på grund av att den hamnat på fel sida att ett staket. Samtliga fyra testdeltagare som nått ruttpunkt F via en ej avsedd väg har navigerat på ett liknande sätt.
