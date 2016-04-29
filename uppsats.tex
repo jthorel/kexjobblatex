@@ -61,22 +61,22 @@ Här definieras de centrala begreppen för denna uppsats
     \subsection{Sonifiering}
 Sonifiering är att använda sig av ickeverbalt ljud för att förmedla information. \citep{Kramer2010}
 
-    \subsection{Spatialt ljud}
-Spatiala ljud är ljud som upplevs härstamma från en plats i det tredimensionella rummet. Spatialt ljud ställer alltid krav på hur de spelas upp och även om lösningar för hifi-anläggningar finns så kommer denna undersökning att fokusera på stereo-ljud som spelas upp i hörlurar.
-
+    \subsection{Spatiala ljud}
+Spatiala ljud är ljud i som upplevs härstamma från en plats i det tredimensionella rummet. Spatiala ljud ställer alltid krav på hur de spelas upp, och även om lösningar för hifi-anläggningar finns så kommer vi i denna undersökning enbart att använda oss av stereo-ljud som spelas upp i hörlurar.
     \subsection{Modern smarttelefon}
 Modern smarttelefon innebär i denna studie att telefonen utöver funktionerna för en vanlig smarttelefon (tangentbord, operativsystem, installera programvara och så vidare) även har hårdvara för rörelsesensor, kompass och GPS. 
 
     \subsection{Ruttpunkt}
 Genom att dela upp en navigering i flera ruttpunkter går det att dirigera användaren från punkt till punkt. En ruttpunkt kan innehålla flera sorters data, men behöver innehålla en GPS-koordinat som motsvarar dess position i latitud och longitud.
-
+    
     \subsection{Uppfångsradie}
-Uppfångsradien är radien på den cirkel kring en ruttpunkt vid vilken användaren anses vara framme vid ruttpunkten. Denna parameter behöver vara väl avvägd för att förhindra att användaren går förbi ruttpunkten och på så sätt behöver vända om för att registrera att den nått sitt mål. Om uppfångsradien är för stor blir problemet istället att navigeringen tappar precision \citep{Walker2004}.
-
+Uppfångsradien är radien på den cirkel kring en ruttpunkt vid vilken användaren anses vara framme vid ruttpunkten. Denna parameter behöver vara väl avvägd. Är den för liten finns det en risk att användaren går förbi ruttpunkten och då behöver vända om för att registrera att den nått sitt mål. Om uppfångsradien är för stor blir problemet istället att navigeringen tappar precision \citep{Walker2004}.
+   
     \subsection{Användbarhet}
 Användbarhet definieras enligt ISO-normen 9241-11 som följande:
-\begin{quote}Den grad i vilken användare i ett givet sammanhang kan bruka en produkt för att uppnå specifika mål på ett ändamålsenligt, effektivt och för användaren tillfredsställande sätt.
-\end{quote}
+		\begin{quote}
+			Den grad i vilken användare i ett givet sammanhang kan bruka en produkt för att uppnå specifika mål på ett ändamålsenligt, effektivt och för användaren tillfredsställande sätt.
+		\end{quote}
 
 För att testa användbarhet kan det göras användartester och studera användarens reaktioner, tid för att klara uppgift, antal ``fel'' gjorda \citep{Dumas1999}. Detta innebär också test av en uppfattad användarupplevelse.
 
@@ -137,7 +137,7 @@ Under arbetet kommer vi även utgå från följande frågeställningar:
 
 Människan kan med hjälp av sina två öron bedöma ett ljuds riktning med en noggranhet av ungefär 2 grader \citep{genuit1990development}. Analysering av skillnaderna mellan ljudsignalerna som når de två öronen är vad som ger upphov till detta. Nedan följer en genomgång av de viktigaste parametrarna.
 
-Ljudets frekvens påverkas både av omgivningen men framförallt av lyssnarens kropp. Överkroppen, huvudet och öronen skapar resonans och bryter ljudet på olika sätt beroende på vilken infallsvinkel det har, något som skapar unika egenskaper på ljudet innan det når våra öron. Till exempel så lågpassfiltreras frekvenser under 1 kHz av ytterörat. På samma sätt så förstärker ytterörat frekvenser över 1 kHzs styrka, beroende på ljudets infallsvinkel varierar denna förstärkning mellan
+Ljudets frekvens påverkas både av omgivningen men framförallt av lyssnarens kropp. Överkroppen, huvudet och öronen skapar resonans och bryter ljudet på olika sätt beroende på vilken infallsvinkel det har, något som skapar unika egenskaper på ljudet innan det når våra öron. Till exempel så lågpassfiltreras frekvenser under 1 kHz av ytterörat. På samma sätt så förstärker ytterörat frekvenser över 1 kHzs styrka, beroende på ljudets infallsvinkel varierar denna förstärkning mellan +3/+6 dB.
 
 För att avgöra en ljudkällas position i det horisontella planet är det framförallt fasskillnaden mellan öronen som spelar roll. Med detta menas att ett ljud som kommer direkt från höger kommer att träffa personens högeröra tidigare än det når vänsterörat.  Det vertikala planet ger ingen fasskillnad och där är det istället ytterörats filtrering av ljudet som är viktig. Framförallt huvudet, axlarna och bröstet är det som påverkar ljudet \citep{genuit1990development}.
 
@@ -148,7 +148,11 @@ När ljudet är rakt motsatt framför och bakom eller rakt motsatt över och under ä
 Head Related Transfer Function (HRTF) är en överföringsfunktion som går att applicera på ljud för att efterlikna den spektrala filtrering, tids- och fasskillnader av en ljudkälla som ytterörat och de andra delarna av kroppen åsamkar.
 
     \section{Absolut och relativ bäring}
-
+		\begin{figure}[h]
+			\centering
+				\includegraphics[width=0.5\textwidth]{figur/bearing.png}
+			\caption{Bäring}
+		\end{figure}
 Bäring är ett vinkelmått och har i denna uppsats två innebörder. Den absoluta bäringen är vinkeln från användaren, relativt norr, till en målpunkt. Den absoluta bäringen påverkas inte av användarens kurs eller riktning och antar ett värde mellan 0 och 360 grader.
 
 Den relativa bäringen tar hänsyn till användarens kurs relativt norr och anger den vinkel som användaren måste rotera för att ha en kurs rakt mot målet.
@@ -160,9 +164,8 @@ HÄR HAR VI FORMLER VI KAN STOPPA IN. FRÅN SPATIAL SOUND FOR NAVIGAT.. SIDA 3.
 GPS är ett system for satellitnavigering där användare med en GPS-mottagare kan bestämma sin position. Positionen bestäms med hjälp av triangulering från 3 satelliter där varje satellit räknar ut avståndet mellan satellit och användare. Med tre olika avstånd kan position bestämmas och nämns i longitud (breddgrader) och latitud (längdgrad) \citep{Kaplan2005}. Altitud kan också bestämmas med en fjärde satellit men används inte i denna studie. Med hjälp av två positioner med varsin lat- och longitud kan absolut bäring från en position till den andra räknas ut. Den kortaste distansen mellan två koordinater blir här inte en rak linje utan en båge eftersom jorden är en sfär. Därför måste följande funktion användas:
 
 \begin{quote}
-
+ FORMLER HÄR
 \end{quote}
-
 \chapter{Prototypen}
 
 Baserat på teorin utvecklades en prototyp för att användas under undersökningen. Prototypen skapades i utvecklingsmiljön Xcode med programmeringsspråket Swift 2, för att användas på en iPhone/iOS. För att det spatialiserade ljudet ska fungera krävs att användaren använder hörlurar.
